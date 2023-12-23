@@ -1,3 +1,10 @@
 # Quarto setting
+.quarto
+_site
+
+# hide directory and file
+qmds
+images
+
+_quarto.yml
 /.quarto/
-/_site/
