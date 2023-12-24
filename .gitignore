@@ -1,10 +1,11 @@
 # Quarto setting
-.quarto
-_site
+/.quarto/
+/_site/
 
 # hide directory and file
-qmds
-images
+/qmds/
+/images/
 
 _quarto.yml
-/.quarto/
+.nojekyll
+styles.css
