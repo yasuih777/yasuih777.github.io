@@ -5,16 +5,9 @@
 # 環境
 
 - OS: WSL Ubuntu 20.04.6 LTS
-- Quarto: 1.3.450  
-
-# セットアップ
-
-1. WSLのインストール
-
-[WSL を使用して Windows に Linux をインストールする方法](https://learn.microsoft.com/ja-jp/windows/wsl/install)
-
-2. Quarto CLIのインストール
-[Tarball Installation On Linux](https://quarto.org/docs/download/tarball.html)
+- Quarto: 1.3.450
+- R: 4.3.2
+  - renv: 1.0.3
 
 # サイトの編集
 

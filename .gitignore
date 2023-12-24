@@ -2,6 +2,9 @@
 /.quarto/
 /_site/
 
+# R project setting
+.Rproj.user
+
 # hide directory and file
 /qmds/
 /images/
