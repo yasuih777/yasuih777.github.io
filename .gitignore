@@ -1,6 +1,7 @@
 # Quarto setting
 /.quarto/
 /_site/
+/_freeze/
 
 # R project setting
 .Rproj.user
@@ -10,5 +11,6 @@
 /images/
 
 _quarto.yml
+_variables.yml
 .nojekyll
 styles.css

@@ -1,30 +1,156 @@
 [
   {
-    "objectID": "qmds/index.html",
-    "href": "qmds/index.html",
-    "title": "このサイトについて",
+    "objectID": "qmds/environment.html",
+    "href": "qmds/environment.html",
+    "title": "実行環境",
     "section": "",
-    "text": "初めまして！「優月の生物統計学ノート」に来訪いただきありがとうございます。優月と申します。\n　このサイトでは医学に興味を持ったデータサイエンティストが、生物統計学の知識や実装を学んだノートを置いていきます。主な内容は医学で扱うような題材を用いて以下を想定しています。\n\n数学(主に統計学)\nデータ解析\n機械学習\nプログラミング\n\nどうぞよろしくお願い致します。"
-  },
-  {
-    "objectID": "qmds/index.html#ブログ内サンプルコードのライセンス",
-    "href": "qmds/index.html#ブログ内サンプルコードのライセンス",
-    "title": "このサイトについて",
-    "section": "ブログ内サンプルコードのライセンス",
-    "text": "ブログ内サンプルコードのライセンス\n\n\n\n\n\n\nMIT License\n\n\n\n\n\nCopyright 2023 優月\n以下に定める条件に従い、本ソフトウェアおよび関連文書のファイル（以下「ソフトウェア」）の複製を取得するすべての人に対し、ソフトウェアを無制限に扱うことを無償で許可します。これには、ソフトウェアの複製を使用、複写、変更、結合、掲載、頒布、サブライセンス、および/または販売する権利、およびソフトウェアを提供する相手に同じことを許可する権利も無制限に含まれます。\n上記の著作権表示および本許諾表示を、ソフトウェアのすべての複製または重要な部分に記載するものとします。\nソフトウェアは「現状のまま」で、明示であるか暗黙であるかを問わず、何らの保証もなく提供されます。ここでいう保証とは、商品性、特定の目的への適合性、および権利非侵害についての保証も含みますが、それに限定されるものではありません。 作者または著作権者は、契約行為、不法行為、またはそれ以外であろうと、ソフトウェアに起因または関連し、あるいはソフトウェアの使用またはその他の扱いによって生じる一切の請求、損害、その他の義務について何らの責任も負わないものとします。"
-  },
-  {
-    "objectID": "qmds/index.html#ブログ内のコンテンツについて",
-    "href": "qmds/index.html#ブログ内のコンテンツについて",
-    "title": "このサイトについて",
-    "section": "ブログ内のコンテンツについて",
-    "text": "ブログ内のコンテンツについて\n本サイトにおける各エントリの文章や画像などのコンテンツはMIT Licenseの適用外です。\n利用の形態を問わず転載は禁止します。\n引用は法律上適切な形で行ってください。"
+    "text": "Quarto\nQuarto version: 1.3.450\n\n\nR\n\n\n setting  value\n version  R version 4.3.2 (2023-10-31)\n os       Ubuntu 20.04.6 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  C.UTF-8\n ctype    C.UTF-8\n tz       Asia/Tokyo\n date     2024-01-03\n pandoc   3.1.1 @ /opt/quarto/bin/tools/ (via rmarkdown)\n\n\n\n\n\n\n トップに戻るライセンスCC BY 4.0 DEED"
   },
   {
     "objectID": "qmds/connection.html",
     "href": "qmds/connection.html",
     "title": "お問い合わせ",
     "section": "",
-    "text": "お問い合わせについて\n現在お問い合わせは受け付けておりません。予めご了承ください。\n\n\n\n\n トップに戻る"
+    "text": "お問い合わせについて\n現在お問い合わせは受け付けておりません。予めご了承ください。\n\n\n\n\n トップに戻るライセンスCC BY 4.0 DEED"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability_distribution.html",
+    "href": "qmds/biostatistics/probability_distribution.html",
+    "title": "確率分布",
+    "section": "",
+    "text": "ベルヌーイ分布\n\n\n二項分布\n\n\nカテゴリカル分布\n\n\n多項分布\n\n\n正規分布\n\n\nガンマ分布\n\n\n多変数正規分布\n\n\n一様分布\n\n\n退化分布\n\n\n経験分布\n\n\n\n\n トップに戻るライセンスCC BY 4.0 DEED"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability.html",
+    "href": "qmds/biostatistics/probability.html",
+    "title": "確率基礎",
+    "section": "",
+    "text": "コード\n# このノートで使用するライブラリです\n\nlibrary(\"tidyr\")\nlibrary(\"ggplot2\")\n\nset.seed(777)\nrm(list=ls())"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability.html#定義",
+    "href": "qmds/biostatistics/probability.html#定義",
+    "title": "確率基礎",
+    "section": "定義",
+    "text": "定義\n　確率空間は標本空間 \\(\\Omega\\) , 事象空間 \\(\\mathcal{E}\\) , 確率測度 \\(P\\) の三つ組 \\((\\Omega, \\mathcal{E}, P)\\) で定義されます。図 2\n\n標本空間 \\(\\Omega\\) : 個別の確率的現象 \\(\\omega \\in \\Omega\\) (標本点, 根元事象)の集合です。標本空間には起こりうる全ての確率的現象が含まれており、各確率的現象は互いに排他的です。\n\nex) サイコロの目の標本空間: \\(\\Omega = \\{ 1, 2, 3, 4, 5, 6 \\}\\)\n排他的でないとは、例えば例のサイコロの目の標本空間が次のように1の要素を二つ以上もつことは無いということです。\n\n\\(\\Omega = \\{ 1, 1, 2, 3, 4, 5, 6 \\}\\) ← これは標本空間ではない\n\n\n事象空間 \\(\\mathcal{E}\\) : 各要素 \\(e \\in \\mathcal{E}\\) 標本空間の部分集合 \\(e \\subseteq \\Omega\\) となる集合です。この各要素は事象と呼びます。事象空間には空集合 \\(\\varnothing\\) 2と全体集合 \\(\\Omega\\) も含みます。事象空間は可算個の集合演算で閉じているため、 \\(\\sigma\\) -代数の構造を持ちます(詳細は割愛しますが、 \\(\\sigma\\) -代数であることによって集合の長さや面積などの大きさを測ることができる、即ち確率値を求めることができます)。事象空間の要素数は \\(|\\mathcal{E}| = 2^{|\\Omega|}\\)となります。\n\nex) サイコロの目が偶数となる事象: \\(e = \\{ 2, 4, 6 \\}\\)\nサイコロの目の事象空間の要素数は \\(2^{|\\{ 1, 2, 3, 4, 5, 6 \\}|} = 2^{6} = 64\\)\n\n確率測度 \\(P\\) : 確率測度は写像 \\(P \\colon \\mathcal{E} \\to [0, 1] \\subset \\mathbb{R}\\) です。一つの事象 \\(e\\) に対して確率値 \\(P(e) \\in [0, 1]\\) が定まります。特に、\\(P(\\varnothing) = 0\\) , \\(P(\\Omega) = 1\\)です。また、確率測度は各事象が互いに排反であるとき 式 1 の(3)を満たします。\n\nex) サイコロの目が偶数となる確率: \\(P( \\{ 2, 4, 6 \\}) = \\frac{1}{2}\\)"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability.html#kolmogorovコルモゴロブの公理",
+    "href": "qmds/biostatistics/probability.html#kolmogorovコルモゴロブの公理",
+    "title": "確率基礎",
+    "section": "Kolmogorov(コルモゴロブ)の公理",
+    "text": "Kolmogorov(コルモゴロブ)の公理\n確率測度 \\(P\\) が満たす、次の3つからなる Kolmogorovの公理 式 1 があります。これは前述した標本空間、事象空間、確率測度の記述と同等の意味です。\n\\[\n\\begin{split}\n&(1) \\ e_{1}, e_{2}, e_{3} \\in \\mathcal{E} \\Rightarrow e_{1} \\cup e_{2} \\cup e_{3}, e_{1} \\cap e_{2} \\cap e_{3}, e_{1}^{c}, \\varnothing, \\Omega \\in \\mathcal{E} \\\\[1em]\n&(2) \\ \\forall e \\in \\mathcal{E}, 0 \\leqq P(e) \\leqq 1 \\ (特に P(\\varnothing) = 0, \\ P(\\Omega) = 1) \\\\[1em]\n&(3) \\ e_{1}, e_{2} \\in \\mathcal{E}, e_{1} \\cap e_{2} = \\varnothing \\ \\mbox{if} \\ i \\ne j \\Rightarrow P(\\cup_{i} e_{i}) = \\sum_{i} P(e_{i})\n\\end{split}\n\\tag{1}\\]\n　特に、実直線 \\(\\mathbb{R}\\) が標本空間であるとき、事象空間にはボレル集合族 \\(\\mathcal{B}\\) が用いられます。こちらも詳細な解説は割愛しますが、これによって任意の開区間、閉区間、点、和集合、そして積集合に対して確率を計算できます。"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability.html#定義-1",
+    "href": "qmds/biostatistics/probability.html#定義-1",
+    "title": "確率基礎",
+    "section": "定義",
+    "text": "定義\n確率変数 \\(X\\) 3 は 式 2 の条件を満たす写像として定義されます。 \\[\nX \\colon \\Omega \\rightarrow \\mathbb{R}, \\exists X^{-1}(b) \\in \\mathcal{E} \\ (\\mbox{for any} \\ b \\in \\mathcal{B})\n\\tag{2}\\]\n　複雑になったように見えますが、この確率変数 \\(X\\) を考えることで解析したい確率的現象にバリエーションを持たせることができます。例えば、 \\(b = [0, 1] \\in \\mathcal{B}\\) をとると、 式 2 より \\(X^{-1}([0, 1]) = \\{ \\omega \\in \\Omega | 0 \\leqq X(\\omega) \\leqq 1 \\} \\in \\mathcal{E}\\) なる \\(X^{-1}\\) が存在し、確率値 \\(P(0 \\leqq X \\leqq 1)\\) が計算できます。これは任意の区間や点で同様に確率値を求めることもできます(ex: \\(P(X = 0)\\) )。\n　なので、確率空間 \\((\\Omega, \\mathcal{E}, P)\\) に対して確率変数 \\(X\\) が与えられたとき、対応する確率空間 \\((\\Omega, \\mathcal{B}, P_{X})\\) が定まります。この \\(P_{X}\\)を確率分布といい、確率変数は確率分布 \\(P_{X}\\) に従います( \\(X \\thicksim P_{X}\\) )。図 2\n\n\n\n\n\ngraph LR\n    Sample[標本空間]\n    Borel[ボレル集合族]\n    Event[事象空間]\n    Probability[確率測度]\n\n    Sample -.-&gt;|確率変数| Borel\n    Borel -.-&gt;|確率変数の逆像| Event\n    Event --&gt;|写像| Probability\n\n    subgraph 確率空間\n        Sample\n        Event\n        Probability\n    end\n\n\n図 2: 確率空間・確率変数のイメージ\n\n\n\n\n※主要な確率分布は確率分布ノートで扱います。"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability.html#例",
+    "href": "qmds/biostatistics/probability.html#例",
+    "title": "確率基礎",
+    "section": "例",
+    "text": "例\n例えば、サイコロを一回振って出た目を標本空間\\(\\{ 1, 2, 3, 4, 5, 6 \\} \\in \\Omega\\)として考えるとき、次のような確率変数をとることができます。\n\nサイコロの目をそのままとった確率変数: \\(X_{id} = id(\\omega)\\)、このときの確率分布は\n\n\\[\nP_{X}(X_{id} = i) = \\frac{1}{6} \\ (i = 1, \\cdots , 6)\n\\]\n\nサイコロの目の偶数を0, 奇数を1としたときの確率分布: \\(X_{odd} = \\omega \\ mod \\ 2\\)、このときの確率分布は\n\n\\[\nP_{X}(X_{odd} = i) = \\frac{1}{2} \\ (i = 0, 1)\n\\]\n\nサイコロの目をコサイン変換したときの確率分布: \\(X_{cos} = \\cos(\\frac{\\pi \\omega}{4})\\)、このときの確率分布は\n\n\\[\nP_{X}(X_{cos} = i) =\n\\left\\{\n    \\begin{align}\n        \\frac{1}{3} \\ &(i = -1) \\\\\n        \\frac{1}{2} \\ &(i = 0) \\\\\n        \\frac{1}{6} \\ &(i = 1)\n    \\end{align}\n\\right.\n\\]"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability.html#同時確率密度関数",
+    "href": "qmds/biostatistics/probability.html#同時確率密度関数",
+    "title": "確率基礎",
+    "section": "同時確率密度関数",
+    "text": "同時確率密度関数\n　同時確率とは、いくつかの事象 \\(\\{ e_{1}, \\cdots, e_{n} \\}\\) の積集合の確率 \\(P(e_{1}, \\cdots, e_{n}) \\coloneqq P(e_{1} \\cap \\cdots \\cap e_{n})\\)です。\n　同時確率密度関数 \\(f_{XY}\\) は、確率変数 \\(X, Y\\) に対して、 式 5 で定義される関数です。\n\\[\nP((X, Y) \\in I \\times J) =\n\\int \\int_{(x, y) \\in I \\times J} f_{XY}(x, y) dx dy \\ (\\mbox{for any} \\ I, J \\subset \\mathbb{R}^{2})\n\\tag{5}\\]"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability.html#周辺分布",
+    "href": "qmds/biostatistics/probability.html#周辺分布",
+    "title": "確率基礎",
+    "section": "周辺分布",
+    "text": "周辺分布\n　同時確率密度関数 \\(f_{XY}\\) に対して、確率変数 \\(Y\\) がとりうる全ての値の総和をとる(式 6)ことを周辺化といいます。このとき、周辺化された関数 \\(f_{X}\\) は確率変数 \\(X\\) の確率密度関数そのものです。\n\\[\n\\int^{\\infty}_{- \\infty} f_{XY}(x, y) dx = f_{X}(x)\n\\tag{6}\\]\n　これは、集団の(年齢、年収)をランダムサンプリングしたデータから年齢のデータを捨てた場合に集団の年収をランダムサンプリングしたデータと同等になります。"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability.html#条件付き確率分布",
+    "href": "qmds/biostatistics/probability.html#条件付き確率分布",
+    "title": "確率基礎",
+    "section": "条件付き確率分布",
+    "text": "条件付き確率分布\n　事象 \\(e_{1}, e_{2}\\)について、事象 \\(e_{2}\\) が実現する条件下での事象 \\(e_{1}\\) の条件付き確率 \\(P(e_{1} | e_{2})\\) は 式 7 で定義されます。\n\\[\nP(e_{1} | e_{2}) = \\frac{P(e_{1} \\cap e_{2})}{P(e_{2})}\n\\tag{7}\\]\n　特に、確率変数 \\(X, Y\\)について、 \\(Y=y\\) のもとでの確率変数 \\(X\\) の条件付き確率密度関数 \\(f_{X | Y=y}\\) を 式 8 で定義します(一般的な記号として\\(p(x | y)\\) と表記します)。\n\\[\np(x | y) = f_{X | Y=y} = \\frac{f_{XY}(x, y)}{f_{Y}(y)}\n\\tag{8}\\]\n　\\(p(x | y)\\)は次のような性質を持ちます。\n\n\\(p(x | y) \\geqq 0\\)\n\\(\\int^{\\infty}_{- \\infty} p(x | y) dx = 1\\)\n\n　例えば、サイコロの出た目が偶数である( \\(Y = y\\) )という条件のもとで、出た目が4以上になる( \\(X\\) )条件付き確率は次のように計算できます。\n\\[\np(x | y) = \\frac{\\frac{1}{6} + \\frac{1}{6}}{\\frac{1}{6} + \\frac{1}{6} + \\frac{1}{6}} = \\frac{2}{3}\n\\]\n　また、式 8 より、同時確率密度関数は 式 9 のように書くことができます。\n\\[\nf_{XY} = f_{X | Y=y} f_{Y} \\ (p(x, y) = p(x | y) p(y))\n\\tag{9}\\]"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability.html#統計的独立",
+    "href": "qmds/biostatistics/probability.html#統計的独立",
+    "title": "確率基礎",
+    "section": "統計的独立",
+    "text": "統計的独立\n　二つの事象 \\(e_{1}, e_{2}\\) が統計的独立とは、 \\(P(e_{1}, e_{2}) = P(e_{1}) P(e_{2})\\) が成り立つことです。 　特に、確率変数 \\(X, Y\\) について \\(X\\) と \\(Y\\) が統計的独立とは 式 10 が成り立つことをいいます。\n\\[\n\\forall b_{1}, b_{2} \\in \\mathcal{B}, P(X \\in b_{1}, Y \\in b_{2}) = P(X \\in b_{1}) P(Y \\in b_{2})\n\\tag{10}\\]\n　確率変数 \\(X\\) と \\(Y\\) が統計的独立であるとき、 \\(p(x | y) = p(x)\\) が成り立ちます。これは、確率変数 \\(Y\\) がどんな値をとろうとも \\(X\\) の確率分布 \\(P_{X}\\) には影響を与えないことを意味しています。"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability.html#期待値-1",
+    "href": "qmds/biostatistics/probability.html#期待値-1",
+    "title": "確率基礎",
+    "section": "期待値",
+    "text": "期待値\n　確率変数 \\(X \\thicksim P_{X}\\) について、その期待値 \\(E(X)\\)は 式 11 で定義されます。期待値は \\(X\\) からランダムサンプリングされたデータの平均的な値を示します。\n\\[\nE(X) = \\int^{\\infty}_{- \\infty} x f_{X}(x) dx\n\\tag{11}\\]\n　期待値 \\(E(X)\\)は次の性質を持ちます。\n\n\\(E(\\sum^{n}_{i=1} X_{i}) = \\sum^{n}_{i=1} E(X_{i})\\)\n\\(a, b\\) が定数のとき、\\(E(a X + b) = a E(X) + b\\)\n\\(X, Y\\) が統計的独立のとき、 \\(E(X Y) = E(X) E(Y)\\)\n\\(\\phi \\colon X \\rightarrow \\mathbb{R}\\) なる関数が存在するとき4、 \\(E(\\phi(X)) = \\int^{\\infty}_{- \\infty} \\phi(x) f_{X}(x) dx\\)\n\n　また、確率変数 \\(X, Y\\) について、\\(Y = y\\) のもとでの条件付き期待値 \\(E(X | Y=y)\\) は 式 12 で定義されます5。\n\\[\n\\begin{split}\nE(X | Y=y) &= \\int^{\\infty}_{- \\infty} x f_{X}(x | y) dx \\\\\n    &= \\frac{1}{f_Y(y)} \\int^{\\infty}_{- \\infty} x f_{XY}(x, y) dx\n\\end{split}\n\\tag{12}\\]\n※ 式 8 を使用しました。"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability.html#指示関数",
+    "href": "qmds/biostatistics/probability.html#指示関数",
+    "title": "確率基礎",
+    "section": "指示関数",
+    "text": "指示関数\n　確率変数 \\(X\\) の確率空間 \\((\\Omega, \\mathcal{B}, P_{X})\\) が与えられているとき、指示関数 \\(I_{b}\\) は 式 13 で定義されます。\n\\[\n\\forall b \\in \\mathcal{B},\nI_{b}(x) =\n\\left\\{\n    \\begin{align}\n        1 \\ \\mbox{if} \\ x \\in b \\\\\n        0 \\ \\mbox{if} \\ x \\notin b\n    \\end{align}\n\\right.\n\\tag{13}\\]\n　この関数は、期待値と確率を繋ぐ性質を持ちます。即ち、 \\(E(I_{b}(x)) = P(X \\in b)\\) が成り立ちます。\n　そのほかにも以下の性質を持ちます。\n\n\\(I_{\\mathbb{R}} = 1, I_{\\varnothing} = 0\\)\n\\((I_{b}(x))^{2} = I_{b}(x)\\)\n\\(I_{b_{1}}(x) I_{b_{2}}(x) = I_{b_{1} \\cap b_{2}}(x)\\)\n\\(I_{b_{1} \\cup b_{2}}(x) = I_{b_{1}}(x) + I_{b_{2}}(x) - I_{b_{1} \\cap b_{2}}(x)\\)"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability.html#分散",
+    "href": "qmds/biostatistics/probability.html#分散",
+    "title": "確率基礎",
+    "section": "分散",
+    "text": "分散\n　確率変数 \\(X\\) の期待値を \\(\\mu = E(X)\\) とするとき、 \\(X\\) の分散 V(X) は 式 14 で定義されます。分散は \\(X\\) がランダムサンプリングするときにどれほどばらつきがあるか、即ち確率分布の広がりの尺度を与えます 6 7。\n\\[\n\\begin{split}\nV(X) &= E((X - \\mu)^{2}) \\\\\n    &= \\int^{\\infty}_{- \\infty} (x - \\mu) f_{X}(x) dx\n\\end{split}\n\\tag{14}\\]\n　分散の平方根 \\(\\sigma = \\sqrt{V(X)}\\) を標準偏差といいます。標準偏差は期待値を単位が揃っているので加算、減算で \\(X\\) からランダムサンプリングして得られたデータの大まかな広がりを表すことができます。\n　また、分散 \\(V(X)\\)は次の性質を持ちます。\n\n\\(a, b\\) が定数のとき、\\(V(a X + b) = a^{2} V(X)\\)\n\\(V(X) = E(X^{2}) - E(X)^{2}\\)\n\\(X, Y\\) が統計的独立のとき、 \\(V(X + Y) = V(X) + V(Y)\\)"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability.html#共分散",
+    "href": "qmds/biostatistics/probability.html#共分散",
+    "title": "確率基礎",
+    "section": "共分散",
+    "text": "共分散\n　確率変数 \\(X, Y\\) の期待値をそれぞれ \\(\\mu_{X}, \\mu_{Y}\\)とするとき、 \\(X, Y\\) の共分散 \\(C(X, Y)\\) を 式 15 で定義します。これは確率変数間の相関の程度を表す指標で、共分散と \\(X = x, Y = y\\) の関係性は次のようになります。\n\n\\(C(X, Y) &gt; 0\\) のとき、 \\(x\\) が大きな値をとるときに同時に観測された \\(y\\) も大きな値をとる傾向がある\n\\(C(X, Y) &lt; 0\\) のとき、 \\(x\\) が大きな値をとるときに同時に観測された \\(y\\) は小さな値をとる傾向がある\n\\(C(X, Y) = 0\\) のとき、 \\(x\\) が大きな値をとるときに同時に観測された \\(y\\) は大きくも小さくもなる傾向がない\n\n\\[\n\\begin{split}\nC(X, Y) &= E(XY) - E(X)E(Y) \\\\\n    &= E((X - \\mu_{X})(Y - \\mu_{Y}))\n\\end{split}\n\\tag{15}\\]\n　また、共分散 \\(C(X, Y)\\) は次の性質を持ちます。\n\n\\(C(X, X) = V(X)\\)\n\\(a, b, c, d\\) が定数のとき、\\(C(a X + b, c Y + d) = a c C(X, y)\\)\n\\(X, Y\\) が統計的独立ならば \\(C(X, Y) = 0\\) (また逆は偽であることに注意)\n\\(V(X + Y) = V(X) + V(Y) + 2 C(X, Y)\\)\n\n　確率変数を要素に持つベクトル \\(\\mathbb{X} = (X_{1}, \\cdots, X_{m})^{T}\\) に対して、第 \\((i, j)\\) 成分が \\(C(X_{i}, X_{y})\\) で与えられる \\((m \\times m)\\) 行列 \\(\\mathbb{V}(\\mathbb{X})\\) を分散共分散行列を呼びます(ここで、 \\(\\mu = E(\\mathbb{X})\\) です)。この分散共分散行列は半正定値実対象行列です。\n\\[\n\\begin{split}\n\\mathbb{V}(\\mathbb{X}) = E((\\mathbb{X} - \\mu)(\\mathbb{X} - \\mu)^{T}) \\\\\n[\\mathbb{V}(\\mathbb(X))]_{ij} = C(X_{i}, X_{y})\n\\end{split}\n\\]"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability.html#推定値",
+    "href": "qmds/biostatistics/probability.html#推定値",
+    "title": "確率基礎",
+    "section": "推定値",
+    "text": "推定値\n　\\(X \\thicksim P_{X}\\)なる確率変数からランダムサンプリングして得られた標本の集合 \\(\\{ x_{i} | i = 1, \\cdots, n \\}\\) に対して、確率分布の期待値の推定値である標本平均 \\(\\bar{x}\\) 式 17 と分散の推定値である標本分散 \\(s^{2}\\) 式 18 が定義されます。また、 \\(s = \\sqrt{s^{2}}\\) を標本標準偏差と定義します。\n\\[\n\\bar{x} = \\frac{1}{n} \\sum^{n}_{i = 1} x_{i}\n\\tag{17}\\]\n\\[\ns^{2} = \\frac{1}{n - 1} \\sum^{n}_{i = 1} (x_{i} - \\bar{x})^{2}\n\\tag{18}\\]\n　加えて、 \\((X, Y) ~ P\\) なる確率変数からランダムサンプリングして得られたペアの標本の集合 \\(\\{ (x_{i}, y_{i}) | i = 1, \\cdots, n \\}\\) に対して、共分散の推定値である標本共分散 \\(c_{XY}\\) 式 19 と相関係数の推定値である標本相関係数 \\(r_{XY}\\) 式 20 が定義されます。\n\\[\nc_{XY} = \\frac{1}{n-1} \\sum^{n}_{i = 1} (x_{i} - \\bar{x}) (y_{i} - \\bar{y})\n\\tag{19}\\]\n\\[\nr_{XY} = \\frac{c_{XY}}{s_{X} s_{Y}}\n\\tag{20}\\]"
+  },
+  {
+    "objectID": "qmds/biostatistics/probability.html#点推定標本変量",
+    "href": "qmds/biostatistics/probability.html#点推定標本変量",
+    "title": "確率基礎",
+    "section": "点推定・標本変量",
+    "text": "点推定・標本変量\n　真の確率分布が既知であるが、その分布のあるパラメータ(母数) \\(\\theta\\) が未知であるとき、標本から適当な値 \\(\\hat{\\theta}_{n}(x_{1}, \\cdots, x_{n})\\) を計算し、この値を \\(\\theta\\) の推定値とする。点推定法があります。例えば、母平均 \\(\\mu\\) を標本平均 \\(\\hat{\\mu} \\equiv \\bar{x}\\) 式 16 で推定するのは母数 \\(\\mu\\) の \\(\\bar{x}\\) による点推定といえます。図 4\n\n\n\n\n\ngraph LR\n    Population([真の確率分布])\n    Sample[(標本)]\n    Parameter[母数]\n\n    Population ==&gt;|抽出| Sample\n    Sample --&gt;|推定| Parameter\n\n\n図 4: 点推定法の流れ\n\n\n\n\n　ここで、実際に得られる推定値 \\(\\hat{\\theta}_{n}\\) は必ず母数 \\(\\theta\\) と一致することはなく、ある程度のばらつきをもって分布しているある変量の一標本として得られたものであることに注意が必要です 図 5 。このある変量がどんな分布に従っているかを知ることは推定値を位置づけるうえでとても重要です。\n\n\nコード\nn &lt;- 50\niter &lt;- 1000\n\nsample &lt;- matrix(rnorm(n * iter), nrow=iter)\ndata = data.frame(sample=rowMeans(sample)) |&gt;\n    as_tibble()\n\ng &lt;- ggplot(data = data, mapping = aes(x = sample)) +\n    geom_histogram(\n        aes(y=..density..), binwidth = 0.05, color=\"white\", alpha=0.5\n    ) +\n    geom_vline(xintercept=0, size=2) +\n    scale_x_continuous(limits = c(-1, 1)) +\n    labs(x = \"Sample mean\", y = \"Density\")\n\nplot(g)\n\n\n\n\n\n図 5: 真の確率分布(標準正規分布)の母平均=0: 黒線、および標本平均: ヒストグラムの関係性。標本平均は母平均付近には局在しているが、全て黒線と一致しない。\n\n\n\n\n　そこで、標準の集団 \\(\\{ x_{i} | i = 1, \\cdots n \\}\\) を実測値とする、真の確率分布に従い互いに統計的独立な確率変数の組 \\((X_{1}, \\cdots, X_{n})\\) を考えます。これは標本変量と呼びます。この標本変量から作られる確率変数 \\(\\bar{X}\\) 式 21 を標本変量平均といいます。標本平均 \\(\\bar{x}\\) は標本変量平均の実測値となります。同様に標本変量から標本変量分散(不偏分散) \\(S^{2}\\) 式 22 を定義することができます。\n\\[\n\\bar{X} = \\frac{X_{1} + \\cdots + X_{n}}{n}\n\\tag{21}\\]\n\\[\nS^{2} = \\frac{1}{n - 1} \\sum^{n}_{i = 1} (X_{i} - \\bar{X})^{2}\n\\tag{22}\\]\n　標本変量平均 \\(\\bar{X}\\) と不偏分散 \\(S^{2}\\) は以下の性質をもちます(ただし、母平均を \\(\\mu\\), 母分散を \\(\\sigma^{2}\\) としました)。ここで重要なのは、標本変量平均および不変分散の期待値が母平均および母分散と一致することです。これは、推定値の不偏性、即ち推定値が母平均および母分散を表現しうることを表しています。\n\n\\(E(\\bar{X}) = \\mu\\)\n\\(V(\\bar{X}) = \\frac{\\sigma^{2}}{n}\\)\n\\(E(S^{2}) = \\sigma^{2}\\)\n\n　上記のように標本変量を導入することでさまざまな母数 \\(\\theta\\) の推定値 \\(\\hat{\\theta}_{n}\\) を評価することができます。推定値がきちんと真の確率分布の母数を表現しうるならば、母数の周りに分布していることが望まれます。このような推定値 \\(\\hat{\\theta}_{n}\\) は 式 23 が成り立ち、不偏推定量と呼ばれます 9。\n\\[\nE(\\hat{\\theta}_{n}) = \\theta\n\\tag{23}\\]\n　留意すべきなのは、全ての母数に対して不偏推定量が存在するわけではないということです。例えば、上記の標本平均、標本分散(標本標準偏差)、標本共分散は不偏推定量ですが、標本相関係数は一般には不偏推定量ではないことが明らかになっています。"
+  },
+  {
+    "objectID": "qmds/articles.html",
+    "href": "qmds/articles.html",
+    "title": "ノートブック",
+    "section": "",
+    "text": "※Pendingタグが付いているものは整備中のノートです。\n\n生物統計学\n生物統計学に関して学んだノートです。\n\n\n   \n     \n     \n       並び替え\n       デフォルト\n         \n          日付 - 日付（昇順）\n        \n         \n          日付 - 日付（降順）\n        \n         \n          題名\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n日付\n\n\n題名\n\n\n分類\n\n\n説明\n\n\n読了目安\n\n\n\n\n\n\n\n\n\n2024-01-08\n\n\n確率分布\n\n\n確率統計学,Pending\n\n\n代表的な確率分布を学びます\n\n\n1 分\n\n\n\n\n\n\n\n2024-01-08\n\n\n確率基礎\n\n\n確率統計学\n\n\n統計学の根幹である確率理論の基礎を学びます\n\n\n10 分\n\n\n\n\n\n\n一致なし\n\n\n\n\n\n\n\n トップに戻るライセンスCC BY 4.0 DEED"
+  },
+  {
+    "objectID": "qmds/index.html",
+    "href": "qmds/index.html",
+    "title": "このサイトについて",
+    "section": "",
+    "text": "初めまして！「優月の生物統計学ノート」に来訪いただきありがとうございます。優月と申します。\n　このサイトでは医学に興味を持ったデータサイエンティストが、生物統計学の知識や実装を学んだノートを置いていきます。主な内容は以下を想定しています(そんなに医学してないな…w)。\n\n数学(主に統計学)\nデータ解析\n機械学習\nプログラミング\n\nどうぞよろしくお願い致します。"
+  },
+  {
+    "objectID": "qmds/index.html#ブログ内のコンテンツ",
+    "href": "qmds/index.html#ブログ内のコンテンツ",
+    "title": "このサイトについて",
+    "section": "ブログ内のコンテンツ",
+    "text": "ブログ内のコンテンツ\n本サイトにおける各エントリの文章や画像などのコンテンツはクリエイティブ・コモンズ・ライセンスを適応します。"
+  },
+  {
+    "objectID": "qmds/index.html#ブログ内サンプルコードのライセンス",
+    "href": "qmds/index.html#ブログ内サンプルコードのライセンス",
+    "title": "このサイトについて",
+    "section": "ブログ内サンプルコードのライセンス",
+    "text": "ブログ内サンプルコードのライセンス\nブログ内で書いているコードに関しては例外的にMIT Licenceを適応します。\n\n\n\n\n\n\nMIT License\n\n\n\n\n\nCopyright 2023 優月\n以下に定める条件に従い、本ソフトウェアおよび関連文書のファイル（以下「ソフトウェア」）の複製を取得するすべての人に対し、ソフトウェアを無制限に扱うことを無償で許可します。これには、ソフトウェアの複製を使用、複写、変更、結合、掲載、頒布、サブライセンス、および/または販売する権利、およびソフトウェアを提供する相手に同じことを許可する権利も無制限に含まれます。\n上記の著作権表示および本許諾表示を、ソフトウェアのすべての複製または重要な部分に記載するものとします。\nソフトウェアは「現状のまま」で、明示であるか暗黙であるかを問わず、何らの保証もなく提供されます。ここでいう保証とは、商品性、特定の目的への適合性、および権利非侵害についての保証も含みますが、それに限定されるものではありません。 作者または著作権者は、契約行為、不法行為、またはそれ以外であろうと、ソフトウェアに起因または関連し、あるいはソフトウェアの使用またはその他の扱いによって生じる一切の請求、損害、その他の義務について何らの責任も負わないものとします。"
   }
 ]
