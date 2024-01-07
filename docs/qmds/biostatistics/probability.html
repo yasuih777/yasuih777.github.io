@@ -55,7 +55,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -302,6 +321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#特性関数" id="toc-特性関数" class="nav-link" data-scroll-target="#特性関数">特性関数</a></li>
   <li><a href="#カルバックライブラー情報量kl-divergence" id="toc-カルバックライブラー情報量kl-divergence" class="nav-link" data-scroll-target="#カルバックライブラー情報量kl-divergence">カルバック・ライブラー情報量(KL-divergence)</a></li>
   <li><a href="#注釈" id="toc-注釈" class="nav-link" data-scroll-target="#注釈">注釈</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -877,6 +897,12 @@ KL(p, q) = \int^{\infty}_{- \infty} p(x) \log \bigg( \frac{p(x)}{q(x)} \bigg) dx
 <li><small id="note10">中心極限定理や大数の法則の証明で使います。</small></li>
 <li><small id="note10">距離の公理の内、対称性と三角不等式を満たさない。</small></li>
 </ol>
+</section>
+<section id="references" class="level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<div id="refs" role="list">
+
+</div>
 
 
 </section>
