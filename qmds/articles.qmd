@@ -1,0 +1,18 @@
+---
+title: ノートブック
+abstract: ノートブックをまとめた本棚です
+date: 01/08/2024
+listing: 
+  - id: biostatisics
+    contents: biostatistics/*.qmd
+    type: table
+    fields: [image, date, title, categories, description, reading-time]
+    categories: true
+---
+
+# 生物統計学
+
+生物統計学に関して学んだノートです。
+
+:::{#biostatisics}
+:::
