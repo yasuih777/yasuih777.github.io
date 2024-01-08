@@ -22,29 +22,41 @@ rm(list=ls())
 # 概要
 　このノートでは、統計解析でよく出てくる、解析的に期待値が求まる @tbl-1 ような代表的な確率分布をいくつか扱います。
 
-| 確率分布 | 期待値 | 分散 |
-| --- | --- | --- |
-| ベルヌーイ分布 | $p$ | $p(1 - p)$ |
-| 二項分布 | $np$ | $np(1 - p)$ |
+| 確率分布 | 式 | 期待値 | 分散 |
+| --- | --- | --- | --- |
+| ベルヌーイ分布: $Ber(p)$ | $\left\{ \begin{split} &1 - p \ &(x = 0) \\ &p \ &(x = 1) \end{split} \right.$ | $p$ | $p(1 - p)$ |
+| 二項分布: $Bi(n, p)$ | ${}_n C_x p^{x} (1 - p)^{n - x}$ | $np$ | $np(1 - p)$ |
+| カテゴリカル分布: $Cat(\mathbb{p})$ | $p_{1}^{x_{1}} \cdots p_{m}^{x_{m}}$ | $p_{i}$ | $p_{i} (1 - p_{i})$ |
+| 多項分布: $Mult(n, \mathbb{p})$ | $\frac{n !}{x_{1} ! \cdots x_{m} !} p_{1}^{x_{1}} \cdots p_{m}^{x_{m}}$ | $n p_{i}$ | $n p_{i} (1 - p_{i})$ |
+| 正規分布: $\mathcal{N}(\mu, \sigma^{2})$ | $\frac{1}{\sqrt{2 \pi \sigma^2}} \exp \bigg(- \frac{1}{2 \sigma^2} (x - \mu)^{2} \bigg)$ | $\mu$ | $\sigma^2$ |
+| ガンマ分布: $Ga(\alpha, \beta)$ | $\frac{\beta^{\alpha}}{\Gamma(\alpha)} x^{\alpha - 1} e^{- \beta x}$ | $\frac{\alpha}{\beta}$ | $\frac{\alpha}{\beta^{2}}$ |
+| 一様分布: $Uni(a, b)$ | $\left\{ \begin{split} &\frac{1}{b - a} \ &\mbox{if} \ a \leqq x \leqq b \\ &0 \ &\mbox{otherwise} \end{split} \right.$ | $\frac{a + b}{2}$ | $\frac{(a - b)^{2}}{12}$ |
+| 退化分布: $Deg(c)$ | $\delta(x - c)$ | $c$ | $0$ |
+| 経験分布: $Emp(\mathbb{x})$ | $\frac{1}{n} \sum^{n}_{i = 1} \delta(x - x_{i})$ | $\bar{x}$ | $\frac{n - 1}{n} s^{2}$ |
+| 多変量正規分布: $\mathcal{N}_{m}(\mathbb{\mu}, \mathbb{\Sigma})$ | $\frac{1}{(2 \pi)^{m / 2} | \Sigma |^{1 / 2}} \exp \bigg(- \frac{1}{2} (\mathbb{x} - \mathbb{\mu})^{T} \Sigma^{-1} (\mathbb{x} - \mathbb{\mu}) \bigg)$ | $\mathbb{\mu}$ | $\Sigma$ |
 
-: 確率分布とその期待値、分散 {#tbl-1}
+: 確率分布とその期待値、分散 {#tbl-1 .striped}
 
-# ベルヌーイ分布
+# 離散分布
 
-# 二項分布
+## ベルヌーイ分布
 
-# カテゴリカル分布
+## 二項分布
 
-# 多項分布
+## カテゴリカル分布
 
-# 正規分布
+## 多項分布
 
-# ガンマ分布
+# 連続分布
 
-# 多変数正規分布
+## 正規分布
 
-# 一様分布
+## ガンマ分布
 
-# 退化分布
+## 一様分布
 
-# 経験分布
+## 退化分布
+
+## 経験分布
+
+## 多変量正規分布
