@@ -5,12 +5,3 @@
 
 # R project setting
 .Rproj.user
-
-# hide directory and file
-/qmds/
-/images/
-
-_quarto.yml
-_variables.yml
-.nojekyll
-styles.css
