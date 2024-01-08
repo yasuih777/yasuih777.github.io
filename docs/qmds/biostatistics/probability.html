@@ -55,26 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -292,7 +273,6 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#確率的現象" id="toc-確率的現象" class="nav-link active" data-scroll-target="#確率的現象">確率的現象</a></li>
-  <li><a href="#統計解析の目的" id="toc-統計解析の目的" class="nav-link" data-scroll-target="#統計解析の目的">統計解析の目的</a></li>
   <li><a href="#確率空間" id="toc-確率空間" class="nav-link" data-scroll-target="#確率空間">確率空間</a>
   <ul class="collapse">
   <li><a href="#定義" id="toc-定義" class="nav-link" data-scroll-target="#定義">定義</a></li>
@@ -304,7 +284,7 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
   <li><a href="#例" id="toc-例" class="nav-link" data-scroll-target="#例">例</a></li>
   </ul></li>
   <li><a href="#確率密度関数分布関数" id="toc-確率密度関数分布関数" class="nav-link" data-scroll-target="#確率密度関数分布関数">確率密度関数・分布関数</a></li>
-  <li><a href="#複数の確率変数の同時確率分布" id="toc-複数の確率変数の同時確率分布" class="nav-link" data-scroll-target="#複数の確率変数の同時確率分布">複数の確率変数の同時確率分布</a>
+  <li><a href="#同時確率" id="toc-同時確率" class="nav-link" data-scroll-target="#同時確率">同時確率</a>
   <ul class="collapse">
   <li><a href="#同時確率密度関数" id="toc-同時確率密度関数" class="nav-link" data-scroll-target="#同時確率密度関数">同時確率密度関数</a></li>
   <li><a href="#周辺分布" id="toc-周辺分布" class="nav-link" data-scroll-target="#周辺分布">周辺分布</a></li>
@@ -314,7 +294,6 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
   <li><a href="#期待値" id="toc-期待値" class="nav-link" data-scroll-target="#期待値">期待値</a>
   <ul class="collapse">
   <li><a href="#期待値-1" id="toc-期待値-1" class="nav-link" data-scroll-target="#期待値-1">期待値</a></li>
-  <li><a href="#指示関数" id="toc-指示関数" class="nav-link" data-scroll-target="#指示関数">指示関数</a></li>
   </ul></li>
   <li><a href="#分散共分散" id="toc-分散共分散" class="nav-link" data-scroll-target="#分散共分散">分散・共分散</a>
   <ul class="collapse">
@@ -322,15 +301,12 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
   <li><a href="#共分散" id="toc-共分散" class="nav-link" data-scroll-target="#共分散">共分散</a></li>
   </ul></li>
   <li><a href="#相関係数" id="toc-相関係数" class="nav-link" data-scroll-target="#相関係数">相関係数</a></li>
-  <li><a href="#標本からの推定値" id="toc-標本からの推定値" class="nav-link" data-scroll-target="#標本からの推定値">標本からの推定値</a>
+  <li><a href="#標本からの推定" id="toc-標本からの推定" class="nav-link" data-scroll-target="#標本からの推定">標本からの推定</a>
   <ul class="collapse">
   <li><a href="#推定値" id="toc-推定値" class="nav-link" data-scroll-target="#推定値">推定値</a></li>
   <li><a href="#点推定標本変量" id="toc-点推定標本変量" class="nav-link" data-scroll-target="#点推定標本変量">点推定・標本変量</a></li>
   </ul></li>
-  <li><a href="#特性関数" id="toc-特性関数" class="nav-link" data-scroll-target="#特性関数">特性関数</a></li>
-  <li><a href="#カルバックライブラー情報量kl-divergence" id="toc-カルバックライブラー情報量kl-divergence" class="nav-link" data-scroll-target="#カルバックライブラー情報量kl-divergence">カルバック・ライブラー情報量(KL-divergence)</a></li>
   <li><a href="#注釈" id="toc-注釈" class="nav-link" data-scroll-target="#注釈">注釈</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -396,40 +372,11 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
 <li>分子の動き: 分子は空間上をランダムウォークします、これによって化学反応系に偶発的な要素が生まれ揺らぎが発生します</li>
 </ul>
 </section>
-<section id="統計解析の目的" class="level1 page-columns page-full">
-<h1>統計解析の目的</h1>
-<p>　統計解析を行う際には、確率的現象の背後に<strong>真の確率分布</strong> <span class="math inline">\(P_{T}\)</span> <sup><a href="#note1">1</a></sup> が存在し、観測データはこの真の確率分布からランダムサンプリングされたものと仮定します。この仮定が成り立たない場合には、確率論を使うことができないので平均や標準偏差を求めることもままなりません。<br>
-　統計家は確率論を用いて測定データのモデリングや分析を行い真の確率分布がもつ性質を推定します。即ち、<strong>統計解析は確率論を用いて測定データから真の確率分布の性質を明らかにすることを目的とします。</strong> <a href="#fig-1">図&nbsp;1</a></p>
-<div class="cell page-columns page-full">
-<div class="cell-output-display page-columns page-full">
-<div id="fig-1" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-1">graph LR
-    Data[(測定データ)]
-    Distribution([真の確率分布])
-    Analyst[統計家]
-    
-    Distribution -.-&gt;|ランダムサンプリング| Data
-    Analyst --&gt;|観測| Data
-    Analyst --&gt;|統計解析| Distribution
-</pre>
-</div>
-<figcaption class="figure-caption margin-caption">図&nbsp;1: 統計解析のフロー</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>　得られた測定データから真の確率分布の性質をどれ程正確に推定できるかは、データの質と量に大きく依存します。データにノイズが少なく量も十分であれば真の確率分布の性質を詳細に推定することができますが、一方でデータにノイズが多く量が少なければ大雑把な性質しか推定できません。<br>
-　統計家が統計解析を行う前に考えなければならないことは、測定データがどの程度情報を含んでいるかを見極め、適切な解析手法と妥当な到達目標を設定することです。</p>
-<p>　また、良質な測定データが得られた場合でも統計解析ではわからない、限界があることを理解しなければなりません。統計解析である現象が起こる確率が尤もらしくわかったとしても、次にその現象が起こるかどうかを確実に予測することはできません。いえるのは現象が起こるのはどれほどの頻度かというだけです。加えて、統計解析では真の確率分布を正確に推定することもできません。これまでに多くの現象が正規分布などの数式化された確率分布に近似されてきましたが、数式で表現力以上に現象は複雑であるためそれらのほとんどは厳密には間違いであるといえます。このとき議論すべきなのは、測定データからみて真の確率分布と仮定したものからどれほど誤差があるかどうかです。<br>
-　<strong>即ち、統計解析は仮定した真の確率分布に当てはまる部分とノイズによって揺らぐ部分に分離し、ノイズの部分は誤差を議論した上でそれ以上は追求しない手法です。</strong></p>
-</section>
 <section id="確率空間" class="level1">
 <h1>確率空間</h1>
 <section id="定義" class="level2">
 <h2 class="anchored" data-anchor-id="定義">定義</h2>
-<p>　<strong>確率空間</strong>は標本空間 <span class="math inline">\(\Omega\)</span> , 事象空間 <span class="math inline">\(\mathcal{E}\)</span> , 確率測度 <span class="math inline">\(P\)</span> の三つ組 <span class="math inline">\((\Omega, \mathcal{E}, P)\)</span> で定義されます。<a href="#fig-2">図&nbsp;2</a></p>
+<p>　<strong>確率空間</strong>は標本空間 <span class="math inline">\(\Omega\)</span> , 事象空間 <span class="math inline">\(\mathcal{E}\)</span> , 確率測度 <span class="math inline">\(P\)</span> の三つ組 <span class="math inline">\((\Omega, \mathcal{E}, P)\)</span> で定義されます。<a href="#fig-1">図&nbsp;1</a></p>
 <ul>
 <li>標本空間 <span class="math inline">\(\Omega\)</span> : 個別の確率的現象 <span class="math inline">\(\omega \in \Omega\)</span> (標本点, 根元事象)の集合です。標本空間には起こりうる全ての確率的現象が含まれており、各確率的現象は互いに排他的です。
 <ul>
@@ -439,7 +386,7 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
 <li><span class="math inline">\(\Omega = \{ 1, 1, 2, 3, 4, 5, 6 \}\)</span> ← これは標本空間ではない</li>
 </ul></li>
 </ul></li>
-<li>事象空間 <span class="math inline">\(\mathcal{E}\)</span> : 各要素 <span class="math inline">\(e \in \mathcal{E}\)</span> 標本空間の部分集合 <span class="math inline">\(e \subseteq \Omega\)</span> となる集合です。この各要素は<strong>事象</strong>と呼びます。事象空間には空集合 <span class="math inline">\(\varnothing\)</span> <sup><a href="#note2">2</a></sup>と全体集合 <span class="math inline">\(\Omega\)</span> も含みます。事象空間は可算個の集合演算で閉じているため、 <span class="math inline">\(\sigma\)</span> -代数の構造を持ちます(詳細は割愛しますが、 <span class="math inline">\(\sigma\)</span> -代数であることによって集合の長さや面積などの大きさを測ることができる、即ち確率値を求めることができます)。事象空間の要素数は <span class="math inline">\(|\mathcal{E}| = 2^{|\Omega|}\)</span>となります。
+<li>事象空間 <span class="math inline">\(\mathcal{E}\)</span> : 各要素 <span class="math inline">\(e \in \mathcal{E}\)</span> 標本空間の部分集合 <span class="math inline">\(e \subseteq \Omega\)</span> となる集合です。この各要素は<strong>事象</strong>と呼びます。事象空間には空集合 <span class="math inline">\(\varnothing\)</span> <sup><a href="#note1">1</a></sup>と全体集合 <span class="math inline">\(\Omega\)</span> も含みます。事象空間は可算個の集合演算で閉じているため、 <span class="math inline">\(\sigma\)</span> -代数の構造を持ちます(詳細は割愛しますが、 <span class="math inline">\(\sigma\)</span> -代数であることによって集合の長さや面積などの大きさを測ることができる、即ち確率値を求めることができます)。事象空間の要素数は <span class="math inline">\(|\mathcal{E}| = 2^{|\Omega|}\)</span>となります。
 <ul>
 <li>ex) サイコロの目が偶数となる事象: <span class="math inline">\(e = \{ 2, 4, 6 \}\)</span></li>
 <li>サイコロの目の事象空間の要素数は <span class="math inline">\(2^{|\{ 1, 2, 3, 4, 5, 6 \}|} = 2^{6} = 64\)</span></li>
@@ -467,17 +414,17 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
 <h1>確率変数</h1>
 <section id="定義-1" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="定義-1">定義</h2>
-<p><strong>確率変数</strong> <span class="math inline">\(X\)</span> <sup><a href="#note3">3</a></sup> は <a href="#eq-2">式&nbsp;2</a> の条件を満たす写像として定義されます。 <span id="eq-2"><span class="math display">\[
+<p><strong>確率変数</strong> <span class="math inline">\(X\)</span> <sup><a href="#note2">2</a></sup> は <a href="#eq-2">式&nbsp;2</a> の条件を満たす写像として定義されます。 <span id="eq-2"><span class="math display">\[
 X \colon \Omega \rightarrow \mathbb{R}, \exists X^{-1}(b) \in \mathcal{E} \ (\mbox{for any} \ b \in \mathcal{B})
 \tag{2}\]</span></span></p>
 <p>　複雑になったように見えますが、この確率変数 <span class="math inline">\(X\)</span> を考えることで解析したい確率的現象にバリエーションを持たせることができます。例えば、 <span class="math inline">\(b = [0, 1] \in \mathcal{B}\)</span> をとると、 <a href="#eq-2">式&nbsp;2</a> より <span class="math inline">\(X^{-1}([0, 1]) = \{ \omega \in \Omega | 0 \leqq X(\omega) \leqq 1 \} \in \mathcal{E}\)</span> なる <span class="math inline">\(X^{-1}\)</span> が存在し、確率値 <span class="math inline">\(P(0 \leqq X \leqq 1)\)</span> が計算できます。これは任意の区間や点で同様に確率値を求めることもできます(ex: <span class="math inline">\(P(X = 0)\)</span> )。<br>
-　なので、確率空間 <span class="math inline">\((\Omega, \mathcal{E}, P)\)</span> に対して確率変数 <span class="math inline">\(X\)</span> が与えられたとき、対応する確率空間 <span class="math inline">\((\Omega, \mathcal{B}, P_{X})\)</span> が定まります。この <span class="math inline">\(P_{X}\)</span>を<strong>確率分布</strong>といい、確率変数は確率分布 <span class="math inline">\(P_{X}\)</span> に従います( <span class="math inline">\(X \thicksim P_{X}\)</span> )。<a href="#fig-2">図&nbsp;2</a></p>
+　なので、確率空間 <span class="math inline">\((\Omega, \mathcal{E}, P)\)</span> に対して確率変数 <span class="math inline">\(X\)</span> が与えられたとき、対応する確率空間 <span class="math inline">\((\Omega, \mathcal{B}, P_{X})\)</span> が定まります。この <span class="math inline">\(P_{X}\)</span>を<strong>確率分布</strong>といい、確率変数は確率分布 <span class="math inline">\(P_{X}\)</span> に従います( <span class="math inline">\(X \thicksim P_{X}\)</span> )。<a href="#fig-1">図&nbsp;1</a></p>
 <div class="cell page-columns page-full">
 <div class="cell-output-display page-columns page-full">
-<div id="fig-2" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<div id="fig-1" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
 <div>
-<pre class="mermaid mermaid-js" data-label="fig-2">graph LR
+<pre class="mermaid mermaid-js" data-label="fig-1">graph LR
     Sample[標本空間]
     Borel[ボレル集合族]
     Event[事象空間]
@@ -494,12 +441,12 @@ X \colon \Omega \rightarrow \mathbb{R}, \exists X^{-1}(b) \in \mathcal{E} \ (\mb
     end
 </pre>
 </div>
-<figcaption class="figure-caption margin-caption">図&nbsp;2: 確率空間・確率変数のイメージ</figcaption>
+<figcaption class="figure-caption margin-caption">図&nbsp;1: 確率空間・確率変数のイメージ</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>※主要な確率分布は<a href="../../qmds/biostatistics/probability_distribution.html">確率分布ノート</a>で扱います。</p>
+<p>※主要な確率分布は<a href="../../qmds/biostatistics/probability_distribution.html">確率分布</a>で扱います。</p>
 </section>
 <section id="例" class="level2">
 <h2 class="anchored" data-anchor-id="例">例</h2>
@@ -533,12 +480,12 @@ P_{X}(X_{cos} = i) =
 </section>
 <section id="確率密度関数分布関数" class="level1 page-columns page-full">
 <h1>確率密度関数・分布関数</h1>
-<p>　<strong>確率密度関数</strong>は <span class="math inline">\(X \thicksim P_{X}\)</span> に対して <a href="#eq-3">式&nbsp;3</a> を満たす関数 <span class="math inline">\(f_{X}\)</span> です。(<a href="#fig-3">図&nbsp;3</a>)</p>
+<p>　<strong>確率密度関数</strong>は <span class="math inline">\(X \thicksim P_{X}\)</span> に対して <a href="#eq-3">式&nbsp;3</a> を満たす関数 <span class="math inline">\(f_{X}\)</span> です。(<a href="#fig-2">図&nbsp;2</a>)</p>
 <p><span id="eq-3"><span class="math display">\[
 P_{X}(X \in b) = \int_{b} f_{X}(x) dx \ (\mbox{for any} \ b \in \mathcal{B}
 \tag{3}\]</span></span></p>
 <p>　これは、事象 <span class="math inline">\(b\)</span> の範囲で <span class="math inline">\(f_{X}\)</span> を積分すると、事象 <span class="math inline">\(b\)</span> の確率値が求まることを表しています。</p>
-<p>　また、確率変数 <span class="math inline">\(X\)</span> が実測値 <span class="math inline">\(x\)</span> 以下になる確率として定義される関数を<strong>分布関数</strong> <span class="math inline">\(F_{X}\)</span> といいます <a href="#eq-4">式&nbsp;4</a> 。(<a href="#fig-3">図&nbsp;3</a>)</p>
+<p>　また、確率変数 <span class="math inline">\(X\)</span> が実測値 <span class="math inline">\(x\)</span> 以下になる確率として定義される関数を<strong>分布関数</strong> <span class="math inline">\(F_{X}\)</span> といいます <a href="#eq-4">式&nbsp;4</a> 。(<a href="#fig-2">図&nbsp;2</a>)</p>
 <p><span id="eq-4"><span class="math display">\[
 P_{X}(X \leqq x) = P_{X}([- \infty, x]) = F_{X}(x)
 \tag{4}\]</span></span></p>
@@ -566,17 +513,17 @@ P_{X}(X \leqq x) = P_{X}([- \infty, x]) = F_{X}(x)
 <span id="cb2-12"><a href="#cb2-12"></a><span class="fu">plot</span>(g)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display page-columns page-full">
-<div id="fig-3" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<div id="fig-2" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="probability_files/figure-html/fig-3-1.png" class="img-fluid figure-img" width="768"></p>
-<figcaption class="figure-caption margin-caption">図&nbsp;3: 確率密度関数と分布関数の例</figcaption>
+<p><img src="probability_files/figure-html/fig-2-1.png" class="img-fluid figure-img" width="768"></p>
+<figcaption class="figure-caption margin-caption">図&nbsp;2: 確率密度関数と分布関数の例</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="複数の確率変数の同時確率分布" class="level1">
-<h1>複数の確率変数の同時確率分布</h1>
+<section id="同時確率" class="level1">
+<h1>同時確率</h1>
 <section id="同時確率密度関数" class="level2">
 <h2 class="anchored" data-anchor-id="同時確率密度関数">同時確率密度関数</h2>
 <p>　<strong>同時確率</strong>とは、いくつかの事象 <span class="math inline">\(\{ e_{1}, \cdots, e_{n} \}\)</span> の積集合の確率 <span class="math inline">\(P(e_{1}, \cdots, e_{n}) \coloneqq P(e_{1} \cap \cdots \cap e_{n})\)</span>です。<br>
@@ -592,7 +539,6 @@ P((X, Y) \in I \times J) =
 <p><span id="eq-6"><span class="math display">\[
 \int^{\infty}_{- \infty} f_{XY}(x, y) dx = f_{X}(x)
 \tag{6}\]</span></span></p>
-<p>　これは、集団の(年齢、年収)をランダムサンプリングしたデータから年齢のデータを捨てた場合に集団の年収をランダムサンプリングしたデータと同等になります。</p>
 </section>
 <section id="条件付き確率分布" class="level2">
 <h2 class="anchored" data-anchor-id="条件付き確率分布">条件付き確率分布</h2>
@@ -620,7 +566,8 @@ f_{XY} = f_{X | Y=y} f_{Y} \ (p(x, y) = p(x | y) p(y))
 </section>
 <section id="統計的独立" class="level2">
 <h2 class="anchored" data-anchor-id="統計的独立">統計的独立</h2>
-<p>　二つの事象 <span class="math inline">\(e_{1}, e_{2}\)</span> が<strong>統計的独立</strong>とは、 <span class="math inline">\(P(e_{1}, e_{2}) = P(e_{1}) P(e_{2})\)</span> が成り立つことです。 　特に、確率変数 <span class="math inline">\(X, Y\)</span> について <span class="math inline">\(X\)</span> と <span class="math inline">\(Y\)</span> が統計的独立とは <a href="#eq-10">式&nbsp;10</a> が成り立つことをいいます。</p>
+<p>　二つの事象 <span class="math inline">\(e_{1}, e_{2}\)</span> が<strong>統計的独立</strong>とは、 <span class="math inline">\(P(e_{1}, e_{2}) = P(e_{1}) P(e_{2})\)</span> が成り立つことです。<br>
+　特に、確率変数 <span class="math inline">\(X, Y\)</span> について <span class="math inline">\(X\)</span> と <span class="math inline">\(Y\)</span> が統計的独立とは <a href="#eq-10">式&nbsp;10</a> が成り立つことをいいます。</p>
 <p><span id="eq-10"><span class="math display">\[
 \forall b_{1}, b_{2} \in \mathcal{B}, P(X \in b_{1}, Y \in b_{2}) = P(X \in b_{1}) P(Y \in b_{2})
 \tag{10}\]</span></span></p>
@@ -640,9 +587,9 @@ E(X) = \int^{\infty}_{- \infty} x f_{X}(x) dx
 <li><span class="math inline">\(E(\sum^{n}_{i=1} X_{i}) = \sum^{n}_{i=1} E(X_{i})\)</span></li>
 <li><span class="math inline">\(a, b\)</span> が定数のとき、<span class="math inline">\(E(a X + b) = a E(X) + b\)</span></li>
 <li><span class="math inline">\(X, Y\)</span> が統計的独立のとき、 <span class="math inline">\(E(X Y) = E(X) E(Y)\)</span></li>
-<li><span class="math inline">\(\phi \colon X \rightarrow \mathbb{R}\)</span> なる関数が存在するとき<sup><a href="#note4">4</a></sup>、 <span class="math inline">\(E(\phi(X)) = \int^{\infty}_{- \infty} \phi(x) f_{X}(x) dx\)</span></li>
+<li><span class="math inline">\(\phi \colon X \rightarrow \mathbb{R}\)</span> なる関数が存在するとき<sup><a href="#note3">3</a></sup>、 <span class="math inline">\(E(\phi(X)) = \int^{\infty}_{- \infty} \phi(x) f_{X}(x) dx\)</span></li>
 </ul>
-<p>　また、確率変数 <span class="math inline">\(X, Y\)</span> について、<span class="math inline">\(Y = y\)</span> のもとでの<strong>条件付き期待値</strong> <span class="math inline">\(E(X | Y=y)\)</span> は <a href="#eq-12">式&nbsp;12</a> で定義されます<sup><a href="#note5">5</a></sup>。</p>
+<p>　また、確率変数 <span class="math inline">\(X, Y\)</span> について、<span class="math inline">\(Y = y\)</span> のもとでの<strong>条件付き期待値</strong> <span class="math inline">\(E(X | Y=y)\)</span> は <a href="#eq-12">式&nbsp;12</a> で定義されます<sup><a href="#note4">4</a></sup>。</p>
 <p><span id="eq-12"><span class="math display">\[
 \begin{split}
 E(X | Y=y) &amp;= \int^{\infty}_{- \infty} x f_{X}(x | y) dx \\
@@ -651,41 +598,19 @@ E(X | Y=y) &amp;= \int^{\infty}_{- \infty} x f_{X}(x | y) dx \\
 \tag{12}\]</span></span></p>
 <p>※ <a href="#eq-8">式&nbsp;8</a> を使用しました。</p>
 </section>
-<section id="指示関数" class="level2">
-<h2 class="anchored" data-anchor-id="指示関数">指示関数</h2>
-<p>　確率変数 <span class="math inline">\(X\)</span> の確率空間 <span class="math inline">\((\Omega, \mathcal{B}, P_{X})\)</span> が与えられているとき、<strong>指示関数</strong> <span class="math inline">\(I_{b}\)</span> は <a href="#eq-13">式&nbsp;13</a> で定義されます。</p>
-<p><span id="eq-13"><span class="math display">\[
-\forall b \in \mathcal{B},
-I_{b}(x) =
-\left\{
-    \begin{align}
-        1 \ \mbox{if} \ x \in b \\
-        0 \ \mbox{if} \ x \notin b
-    \end{align}
-\right.
-\tag{13}\]</span></span></p>
-<p>　この関数は、期待値と確率を繋ぐ性質を持ちます。即ち、 <span class="math inline">\(E(I_{b}(x)) = P(X \in b)\)</span> が成り立ちます。</p>
-<p>　そのほかにも以下の性質を持ちます。</p>
-<ul>
-<li><span class="math inline">\(I_{\mathbb{R}} = 1, I_{\varnothing} = 0\)</span></li>
-<li><span class="math inline">\((I_{b}(x))^{2} = I_{b}(x)\)</span></li>
-<li><span class="math inline">\(I_{b_{1}}(x) I_{b_{2}}(x) = I_{b_{1} \cap b_{2}}(x)\)</span></li>
-<li><span class="math inline">\(I_{b_{1} \cup b_{2}}(x) = I_{b_{1}}(x) + I_{b_{2}}(x) - I_{b_{1} \cap b_{2}}(x)\)</span></li>
-</ul>
-</section>
 </section>
 <section id="分散共分散" class="level1">
 <h1>分散・共分散</h1>
 <section id="分散" class="level2">
 <h2 class="anchored" data-anchor-id="分散">分散</h2>
-<p>　確率変数 <span class="math inline">\(X\)</span> の期待値を <span class="math inline">\(\mu = E(X)\)</span> とするとき、 <span class="math inline">\(X\)</span> の<strong>分散</strong> V(X) は <a href="#eq-14">式&nbsp;14</a> で定義されます。分散は <span class="math inline">\(X\)</span> がランダムサンプリングするときにどれほどばらつきがあるか、即ち確率分布の広がりの尺度を与えます <sup><a href="#note6">6</a></sup> <sup><a href="#note7">7</a></sup>。</p>
-<p><span id="eq-14"><span class="math display">\[
+<p>　確率変数 <span class="math inline">\(X\)</span> の期待値を <span class="math inline">\(\mu = E(X)\)</span> とするとき、 <span class="math inline">\(X\)</span> の<strong>分散</strong> V(X) は <a href="#eq-13">式&nbsp;13</a> で定義されます。分散は <span class="math inline">\(X\)</span> がランダムサンプリングするときにどれほどばらつきがあるか、即ち確率分布の広がりの尺度を与えます <sup><a href="#note5">5</a></sup> <sup><a href="#note6">6</a></sup>。</p>
+<p><span id="eq-13"><span class="math display">\[
 \begin{split}
 V(X) &amp;= E((X - \mu)^{2}) \\
     &amp;= \int^{\infty}_{- \infty} (x - \mu) f_{X}(x) dx
 \end{split}
-\tag{14}\]</span></span></p>
-<p>　分散の平方根 <span class="math inline">\(\sigma = \sqrt{V(X)}\)</span> を<strong>標準偏差</strong>といいます。標準偏差は期待値を単位が揃っているので加算、減算で <span class="math inline">\(X\)</span> からランダムサンプリングして得られたデータの大まかな広がりを表すことができます。</p>
+\tag{13}\]</span></span></p>
+<p>　分散の平方根 <span class="math inline">\(\sigma = \sqrt{V(X)}\)</span> を<strong>標準偏差</strong>といいます。標準偏差は期待値を単位が揃っているので加算、減算で <span class="math inline">\(X\)</span> から得られたデータの大まかな広がりを表すことができます。</p>
 <p>　また、分散 <span class="math inline">\(V(X)\)</span>は次の性質を持ちます。</p>
 <ul>
 <li><span class="math inline">\(a, b\)</span> が定数のとき、<span class="math inline">\(V(a X + b) = a^{2} V(X)\)</span></li>
@@ -695,18 +620,18 @@ V(X) &amp;= E((X - \mu)^{2}) \\
 </section>
 <section id="共分散" class="level2">
 <h2 class="anchored" data-anchor-id="共分散">共分散</h2>
-<p>　確率変数 <span class="math inline">\(X, Y\)</span> の期待値をそれぞれ <span class="math inline">\(\mu_{X}, \mu_{Y}\)</span>とするとき、 <span class="math inline">\(X, Y\)</span> の<strong>共分散</strong> <span class="math inline">\(C(X, Y)\)</span> を <a href="#eq-15">式&nbsp;15</a> で定義します。これは確率変数間の相関の程度を表す指標で、共分散と <span class="math inline">\(X = x, Y = y\)</span> の関係性は次のようになります。</p>
+<p>　確率変数 <span class="math inline">\(X, Y\)</span> の期待値をそれぞれ <span class="math inline">\(\mu_{X}, \mu_{Y}\)</span>とするとき、 <span class="math inline">\(X, Y\)</span> の<strong>共分散</strong> <span class="math inline">\(C(X, Y)\)</span> を <a href="#eq-14">式&nbsp;14</a> で定義します。これは確率変数間の相関の程度を表す指標で、共分散と <span class="math inline">\(X = x, Y = y\)</span> の関係性は次のようになります。</p>
 <ul>
 <li><span class="math inline">\(C(X, Y) &gt; 0\)</span> のとき、 <span class="math inline">\(x\)</span> が大きな値をとるときに同時に観測された <span class="math inline">\(y\)</span> も大きな値をとる傾向がある</li>
 <li><span class="math inline">\(C(X, Y) &lt; 0\)</span> のとき、 <span class="math inline">\(x\)</span> が大きな値をとるときに同時に観測された <span class="math inline">\(y\)</span> は小さな値をとる傾向がある</li>
 <li><span class="math inline">\(C(X, Y) = 0\)</span> のとき、 <span class="math inline">\(x\)</span> が大きな値をとるときに同時に観測された <span class="math inline">\(y\)</span> は大きくも小さくもなる傾向がない</li>
 </ul>
-<p><span id="eq-15"><span class="math display">\[
+<p><span id="eq-14"><span class="math display">\[
 \begin{split}
 C(X, Y) &amp;= E(XY) - E(X)E(Y) \\
     &amp;= E((X - \mu_{X})(Y - \mu_{Y}))
 \end{split}
-\tag{15}\]</span></span></p>
+\tag{14}\]</span></span></p>
 <p>　また、共分散 <span class="math inline">\(C(X, Y)\)</span> は次の性質を持ちます。</p>
 <ul>
 <li><span class="math inline">\(C(X, X) = V(X)\)</span></li>
@@ -725,10 +650,10 @@ C(X, Y) &amp;= E(XY) - E(X)E(Y) \\
 </section>
 <section id="相関係数" class="level1">
 <h1>相関係数</h1>
-<p>　確率変数 <span class="math inline">\(X, Y\)</span>が <span class="math inline">\(V(X) &gt; 0, V(Y) &gt; 0\)</span>を満たすとき、<strong>相関係数</strong> <span class="math inline">\(\rho(X, Y)\)</span> <a href="#eq-16">式&nbsp;16</a> で定義されます <sup><a href="#note8">8</a></sup>。相関係数は二変数間の線形的な関係の尺度を与えます <a href="#tbl-1">表&nbsp;1</a>。</p>
-<p><span id="eq-16"><span class="math display">\[
+<p>　確率変数 <span class="math inline">\(X, Y\)</span>が <span class="math inline">\(V(X) &gt; 0, V(Y) &gt; 0\)</span>を満たすとき、<strong>相関係数</strong> <span class="math inline">\(\rho(X, Y)\)</span> <a href="#eq-15">式&nbsp;15</a> で定義されます <sup><a href="#note7">7</a></sup>。相関係数は二変数間の線形的な関係の尺度を与えます <a href="#tbl-1">表&nbsp;1</a>。</p>
+<p><span id="eq-15"><span class="math display">\[
 \rho(X, Y) = \frac{C(X, Y)}{\sqrt{V(X)V(Y)}}
-\tag{16}\]</span></span></p>
+\tag{15}\]</span></span></p>
 <p>　相関係数は次の性質を持ちます。</p>
 <ul>
 <li><span class="math inline">\(-1 \leqq \rho(X, Y) \leqq 1\)</span></li>
@@ -777,34 +702,34 @@ C(X, Y) &amp;= E(XY) - E(X)E(Y) \\
 </table>
 </div>
 </section>
-<section id="標本からの推定値" class="level1 page-columns page-full">
-<h1>標本からの推定値</h1>
+<section id="標本からの推定" class="level1 page-columns page-full">
+<h1>標本からの推定</h1>
 <section id="推定値" class="level2">
 <h2 class="anchored" data-anchor-id="推定値">推定値</h2>
-<p>　<span class="math inline">\(X \thicksim P_{X}\)</span>なる確率変数からランダムサンプリングして得られた標本の集合 <span class="math inline">\(\{ x_{i} | i = 1, \cdots, n \}\)</span> に対して、確率分布の期待値の推定値である<strong>標本平均</strong> <span class="math inline">\(\bar{x}\)</span> <a href="#eq-17">式&nbsp;17</a> と分散の推定値である<strong>標本分散</strong> <span class="math inline">\(s^{2}\)</span> <a href="#eq-18">式&nbsp;18</a> が定義されます。また、 <span class="math inline">\(s = \sqrt{s^{2}}\)</span> を<strong>標本標準偏差</strong>と定義します。</p>
-<p><span id="eq-17"><span class="math display">\[
+<p>　<span class="math inline">\(X \thicksim P_{X}\)</span>なる確率変数から得られた標本の集合 <span class="math inline">\(\{ x_{i} | i = 1, \cdots, n \}\)</span> に対して、確率分布の期待値の推定値である<strong>標本平均</strong> <span class="math inline">\(\bar{x}\)</span> <a href="#eq-16">式&nbsp;16</a> と分散の推定値である<strong>標本分散</strong> <span class="math inline">\(s^{2}\)</span> <a href="#eq-17">式&nbsp;17</a> が定義されます。また、 <span class="math inline">\(s = \sqrt{s^{2}}\)</span> を<strong>標本標準偏差</strong>と定義します。</p>
+<p><span id="eq-16"><span class="math display">\[
 \bar{x} = \frac{1}{n} \sum^{n}_{i = 1} x_{i}
-\tag{17}\]</span></span></p>
-<p><span id="eq-18"><span class="math display">\[
+\tag{16}\]</span></span></p>
+<p><span id="eq-17"><span class="math display">\[
 s^{2} = \frac{1}{n - 1} \sum^{n}_{i = 1} (x_{i} - \bar{x})^{2}
-\tag{18}\]</span></span></p>
-<p>　加えて、 <span class="math inline">\((X, Y) ~ P\)</span> なる確率変数からランダムサンプリングして得られたペアの標本の集合 <span class="math inline">\(\{ (x_{i}, y_{i}) | i = 1, \cdots, n \}\)</span> に対して、共分散の推定値である<strong>標本共分散</strong> <span class="math inline">\(c_{XY}\)</span> <a href="#eq-19">式&nbsp;19</a> と相関係数の推定値である<strong>標本相関係数</strong> <span class="math inline">\(r_{XY}\)</span> <a href="#eq-20">式&nbsp;20</a> が定義されます。</p>
-<p><span id="eq-19"><span class="math display">\[
+\tag{17}\]</span></span></p>
+<p>　加えて、 <span class="math inline">\((X, Y) ~ P\)</span> なる確率変数から得られたペアの標本の集合 <span class="math inline">\(\{ (x_{i}, y_{i}) | i = 1, \cdots, n \}\)</span> に対して、共分散の推定値である<strong>標本共分散</strong> <span class="math inline">\(c_{XY}\)</span> <a href="#eq-18">式&nbsp;18</a> と相関係数の推定値である<strong>標本相関係数</strong> <span class="math inline">\(r_{XY}\)</span> <a href="#eq-19">式&nbsp;19</a> が定義されます。</p>
+<p><span id="eq-18"><span class="math display">\[
 c_{XY} = \frac{1}{n-1} \sum^{n}_{i = 1} (x_{i} - \bar{x}) (y_{i} - \bar{y})
-\tag{19}\]</span></span></p>
-<p><span id="eq-20"><span class="math display">\[
+\tag{18}\]</span></span></p>
+<p><span id="eq-19"><span class="math display">\[
 r_{XY} = \frac{c_{XY}}{s_{X} s_{Y}}
-\tag{20}\]</span></span></p>
+\tag{19}\]</span></span></p>
 </section>
 <section id="点推定標本変量" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="点推定標本変量">点推定・標本変量</h2>
-<p>　真の確率分布が既知であるが、その分布のあるパラメータ(母数) <span class="math inline">\(\theta\)</span> が未知であるとき、標本から適当な値 <span class="math inline">\(\hat{\theta}_{n}(x_{1}, \cdots, x_{n})\)</span> を計算し、この値を <span class="math inline">\(\theta\)</span> の推定値とする。<strong>点推定法</strong>があります。例えば、母平均 <span class="math inline">\(\mu\)</span> を標本平均 <span class="math inline">\(\hat{\mu} \equiv \bar{x}\)</span> <a href="#eq-16">式&nbsp;16</a> で推定するのは母数 <span class="math inline">\(\mu\)</span> の <span class="math inline">\(\bar{x}\)</span> による点推定といえます。<a href="#fig-4">図&nbsp;4</a></p>
+<p>　真の確率分布が既知であるが、その分布のあるパラメータ(母数) <span class="math inline">\(\theta\)</span> が未知であるとき、標本から適当な値 <span class="math inline">\(\hat{\theta}_{n}(x_{1}, \cdots, x_{n})\)</span> を計算し、この値を <span class="math inline">\(\theta\)</span> の推定値とする。<strong>点推定法</strong>があります。例えば、母平均 <span class="math inline">\(\mu\)</span> を標本平均 <span class="math inline">\(\hat{\mu} \equiv \bar{x}\)</span> <a href="#eq-16">式&nbsp;16</a> で推定するのは母数 <span class="math inline">\(\mu\)</span> の <span class="math inline">\(\bar{x}\)</span> による点推定といえます。<a href="#fig-3">図&nbsp;3</a></p>
 <div class="cell page-columns page-full">
 <div class="cell-output-display page-columns page-full">
-<div id="fig-4" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<div id="fig-3" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
 <div>
-<pre class="mermaid mermaid-js" data-label="fig-4">graph LR
+<pre class="mermaid mermaid-js" data-label="fig-3">graph LR
     Population([真の確率分布])
     Sample[(標本)]
     Parameter[母数]
@@ -813,12 +738,12 @@ r_{XY} = \frac{c_{XY}}{s_{X} s_{Y}}
     Sample --&gt;|推定| Parameter
 </pre>
 </div>
-<figcaption class="figure-caption margin-caption">図&nbsp;4: 点推定法の流れ</figcaption>
+<figcaption class="figure-caption margin-caption">図&nbsp;3: 点推定法の流れ</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>　ここで、実際に得られる推定値 <span class="math inline">\(\hat{\theta}_{n}\)</span> は必ず母数 <span class="math inline">\(\theta\)</span> と一致することはなく、ある程度のばらつきをもって分布している<u>ある変量</u>の一標本として得られたものであることに注意が必要です <a href="#fig-5">図&nbsp;5</a> 。このある変量がどんな分布に従っているかを知ることは推定値を位置づけるうえでとても重要です。</p>
+<p>　ここで、実際に得られる推定値 <span class="math inline">\(\hat{\theta}_{n}\)</span> は必ず母数 <span class="math inline">\(\theta\)</span> と一致することはなく、ある程度のばらつきをもって分布している<u>ある変量</u>の一標本として得られたものであることに注意が必要です <a href="#fig-4">図&nbsp;4</a> 。このある変量がどんな分布に従っているかを知ることは推定値を位置づけるうえでとても重要です。</p>
 <div class="cell page-columns page-full">
 <details>
 <summary>コード</summary>
@@ -840,78 +765,46 @@ r_{XY} = \frac{c_{XY}}{s_{X} s_{Y}}
 <span id="cb3-16"><a href="#cb3-16"></a><span class="fu">plot</span>(g)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display page-columns page-full">
-<div id="fig-5" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<div id="fig-4" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="probability_files/figure-html/fig-5-1.png" class="img-fluid figure-img" width="768"></p>
-<figcaption class="figure-caption margin-caption">図&nbsp;5: 真の確率分布(標準正規分布)の母平均=0: 黒線、および標本平均: ヒストグラムの関係性。標本平均は母平均付近には局在しているが、全て黒線と一致しない。</figcaption>
+<p><img src="probability_files/figure-html/fig-4-1.png" class="img-fluid figure-img" width="768"></p>
+<figcaption class="figure-caption margin-caption">図&nbsp;4: 真の確率分布(標準正規分布)の母平均=0: 黒線、および標本平均: ヒストグラムの関係性。標本平均は母平均付近には局在しているが、全て黒線と一致しない。</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>　そこで、標準の集団 <span class="math inline">\(\{ x_{i} | i = 1, \cdots n \}\)</span> を実測値とする、真の確率分布に従い互いに統計的独立な確率変数の組 <span class="math inline">\((X_{1}, \cdots, X_{n})\)</span> を考えます。これは<strong>標本変量</strong>と呼びます。この標本変量から作られる確率変数 <span class="math inline">\(\bar{X}\)</span> <a href="#eq-21">式&nbsp;21</a> を<strong>標本変量平均</strong>といいます。標本平均 <span class="math inline">\(\bar{x}\)</span> は標本変量平均の実測値となります。同様に標本変量から<strong>標本変量分散(不偏分散)</strong> <span class="math inline">\(S^{2}\)</span> <a href="#eq-22">式&nbsp;22</a> を定義することができます。</p>
-<p><span id="eq-21"><span class="math display">\[
+<p>　そこで、標準の集団 <span class="math inline">\(\{ x_{i} | i = 1, \cdots n \}\)</span> を実測値とする、真の確率分布に従い互いに統計的独立な確率変数の組 <span class="math inline">\((X_{1}, \cdots, X_{n})\)</span> を考えます。これは<strong>標本変量</strong>と呼びます。この標本変量から作られる確率変数 <span class="math inline">\(\bar{X}\)</span> <a href="#eq-20">式&nbsp;20</a> を<strong>標本変量平均</strong>といいます。標本平均 <span class="math inline">\(\bar{x}\)</span> は標本変量平均の実測値となります。同様に標本変量から<strong>標本変量分散(不偏分散)</strong> <span class="math inline">\(S^{2}\)</span> <a href="#eq-21">式&nbsp;21</a> を定義することができます。</p>
+<p><span id="eq-20"><span class="math display">\[
 \bar{X} = \frac{X_{1} + \cdots + X_{n}}{n}
-\tag{21}\]</span></span></p>
-<p><span id="eq-22"><span class="math display">\[
+\tag{20}\]</span></span></p>
+<p><span id="eq-21"><span class="math display">\[
 S^{2} = \frac{1}{n - 1} \sum^{n}_{i = 1} (X_{i} - \bar{X})^{2}
-\tag{22}\]</span></span></p>
+\tag{21}\]</span></span></p>
 <p>　標本変量平均 <span class="math inline">\(\bar{X}\)</span> と不偏分散 <span class="math inline">\(S^{2}\)</span> は以下の性質をもちます(ただし、母平均を <span class="math inline">\(\mu\)</span>, 母分散を <span class="math inline">\(\sigma^{2}\)</span> としました)。ここで重要なのは、標本変量平均および不変分散の期待値が母平均および母分散と一致することです。これは、推定値の不偏性、即ち推定値が母平均および母分散を表現しうることを表しています。</p>
 <ul>
 <li><span class="math inline">\(E(\bar{X}) = \mu\)</span></li>
 <li><span class="math inline">\(V(\bar{X}) = \frac{\sigma^{2}}{n}\)</span></li>
 <li><span class="math inline">\(E(S^{2}) = \sigma^{2}\)</span></li>
 </ul>
-<p>　上記のように標本変量を導入することでさまざまな母数 <span class="math inline">\(\theta\)</span> の推定値 <span class="math inline">\(\hat{\theta}_{n}\)</span> を評価することができます。推定値がきちんと真の確率分布の母数を表現しうるならば、母数の周りに分布していることが望まれます。このような推定値 <span class="math inline">\(\hat{\theta}_{n}\)</span> は <a href="#eq-23">式&nbsp;23</a> が成り立ち、<strong>不偏推定量</strong>と呼ばれます <sup><a href="#note9">9</a></sup>。</p>
-<p><span id="eq-23"><span class="math display">\[
+<p>　上記のように標本変量を導入することでさまざまな母数 <span class="math inline">\(\theta\)</span> の推定値 <span class="math inline">\(\hat{\theta}_{n}\)</span> を評価することができます。推定値がきちんと真の確率分布の母数を表現しうるならば、母数の周りに分布していることが望まれます。このような推定値 <span class="math inline">\(\hat{\theta}_{n}\)</span> は <a href="#eq-22">式&nbsp;22</a> が成り立ち、<strong>不偏推定量</strong>と呼ばれます <sup><a href="#note8">8</a></sup>。</p>
+<p><span id="eq-22"><span class="math display">\[
 E(\hat{\theta}_{n}) = \theta
-\tag{23}\]</span></span></p>
+\tag{22}\]</span></span></p>
 <p>　留意すべきなのは、全ての母数に対して不偏推定量が存在するわけではないということです。例えば、上記の標本平均、標本分散(標本標準偏差)、標本共分散は不偏推定量ですが、標本相関係数は一般には不偏推定量ではないことが明らかになっています。</p>
 </section>
-</section>
-<section id="特性関数" class="level1">
-<h1>特性関数</h1>
-<p>　確率変数 <span class="math inline">\(X\)</span> の確率分布 <span class="math inline">\(p(x)\)</span> を完全に特徴づける関数として、 <span class="math inline">\(X\)</span> の<strong>特性関数</strong> <span class="math inline">\(\phi_{X}(t)\)</span> <a href="#eq-24">式&nbsp;24</a> が定義されます。</p>
-<p><span id="eq-24"><span class="math display">\[
-\phi_{X}(t) = E(e^{itX})
-\tag{24}\]</span></span></p>
-<p>　特性関数では「確率変数 <span class="math inline">\(X\)</span> と確率変数の列 <span class="math inline">\(X_{n} \ (n = 1, 2, \cdots)\)</span> が、 <span class="math inline">\(\forall t \in \mathbb{R}, \lim_{n \rightarrow \infty} \phi_{X_{n}}(t) = \phi_{X}(t)\)</span> を満たし、 <span class="math inline">\(\phi_{X}(t)\)</span> が <span class="math inline">\(t = 0\)</span> で連続であれば <span class="math inline">\(X_{n}\)</span> は <span class="math inline">\(X\)</span> に分布収束する」という<strong>レヴィの連続性定理</strong> <sup><a href="#note10">10</a></sup>を持ちます。これは、大雑把にいうと「特性関数が一致する確率変数は同じ確率分布を持つ」ことを意味し、特性関数を比較することによって二つの確率分布の等価性を評価することができます。</p>
-<p>　また、 <span class="math inline">\(E(x^{m}) \ (m = 0, 1, 2, \cdots)\)</span> を <span class="math inline">\(X\)</span> の <strong><span class="math inline">\(m\)</span> 次モーメント</strong> といいます。このモーメント情報が全てあれば、確率分布を完全に特徴づけられます。例えば、平均や分散、歪度、尖度をモーメントから求めることができます。</p>
-<p>　加えて、特性関数は以下の性質を持ちます(<span class="math inline">\(a, b, c\)</span>は定数とする)。</p>
-<ul>
-<li><span class="math inline">\(\phi_{a X + b Y}(t) = \phi_{X}(a t) \phi_{Y}(b t)\)</span></li>
-<li><span class="math inline">\(\phi_{a X + c}(t) = \phi_{X}(a t) e^{itc}\)</span></li>
-</ul>
-</section>
-<section id="カルバックライブラー情報量kl-divergence" class="level1">
-<h1>カルバック・ライブラー情報量(KL-divergence)</h1>
-<p>　機械学習の理論で、二つの確率分布 <span class="math inline">\(p(x), q(x)\)</span> の乖離度を表す指標として、<strong>カルバック・ライブラー情報量(KL-divergence)</strong> <span class="math inline">\(KL(p, q)\)</span> <a href="#eq-25">式&nbsp;25</a> がよく使われます。</p>
-<p><span id="eq-25"><span class="math display">\[
-KL(p, q) = \int^{\infty}_{- \infty} p(x) \log \bigg( \frac{p(x)}{q(x)} \bigg) dx
-\tag{25}\]</span></span></p>
-<p>　KL-divergenceは非負で、<span class="math inline">\(p = q\)</span> のときのみ <span class="math inline">\(0\)</span> となる。また、距離ではない <sup><a href="#note11">11</a></sup> ダイバージェンスとして定義されており、分布間の乖離度をとる代表的な指標です。</p>
 </section>
 <section id="注釈" class="level1">
 <h1>注釈</h1>
 <ol type="1">
-<li><small id="note1">母集団分布と同等です。</small><br>
-</li>
-<li><small id="note2">このとき零事象となります。</small></li>
-<li><small id="note3">離散か連続かで記号や名前が変わることがありますが、ここでは連続の方で書いていきます(離散の場合もおおよその考え方は同じです)。</small></li>
-<li><small id="note4">一般的にはBaire関数をとります。</small></li>
-<li><small id="note5">これを <span class="math inline">\(y\)</span> の関数とみて、 <span class="math inline">\(X\)</span> の <span class="math inline">\(Y\)</span> に対する回帰関数と呼ぶことがあります。</small></li>
-<li><small id="note6"><span class="math inline">\(V(X) = 0\)</span> となる場合はランダムサンプリングするたびに <span class="math inline">\(x = \mu\)</span> が得られます。このような確率変数は退化分布に従い( <span class="math inline">\(X \thicksim Deg(\mu)\)</span> )、定数確率変数と呼びます。</small></li>
-<li><small id="note7">平均、分散から導かれる確率論における重要な性質としてチェビシェフの不等式があります。</small></li>
-<li><small id="note8">ここの定義はピアソンの相関係数です。</small></li>
-<li><small id="note9">不偏性に加えて最適な推定量の条件として、有効性・充足性・一致性があります。</small></li>
-<li><small id="note10">中心極限定理や大数の法則の証明で使います。</small></li>
-<li><small id="note10">距離の公理の内、対称性と三角不等式を満たさない。</small></li>
+<li><small id="note1">このとき零事象となります。</small></li>
+<li><small id="note2">離散か連続かで記号や名前が変わることがありますが、ここでは連続の方で書いていきます(離散の場合もおおよその考え方は同じです)。</small></li>
+<li><small id="note3">一般的にはBaire関数をとります。</small></li>
+<li><small id="note4">これを <span class="math inline">\(y\)</span> の関数とみて、 <span class="math inline">\(X\)</span> の <span class="math inline">\(Y\)</span> に対する回帰関数と呼ぶことがあります。</small></li>
+<li><small id="note5"><span class="math inline">\(V(X) = 0\)</span> となる場合はランダムサンプリングするたびに <span class="math inline">\(x = \mu\)</span> が得られます。このような確率変数は<a href="../../qmds/biostatistics/probability_distribution.html#退化分布">退化分布</a>に従い( <span class="math inline">\(X \thicksim Deg(\mu)\)</span> )、定数確率変数と呼びます。</small></li>
+<li><small id="note6">平均、分散から導かれる確率論における重要な性質としてチェビシェフの不等式があります。</small></li>
+<li><small id="note7">ここの定義はピアソンの相関係数です。</small></li>
+<li><small id="note8">不偏性に加えて最適な推定量の条件として、有効性・充足性・一致性があります。</small></li>
 </ol>
-</section>
-<section id="references" class="level1 unnumbered">
-<h1 class="unnumbered">References</h1>
-<div id="refs" role="list">
-
-</div>
 
 
 </section>
