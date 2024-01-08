@@ -9,4 +9,4 @@
 
 # Licence
 
-このレポジトリ内のコードでは`MIT Licence`を適応します。
+このレポジトリ内の各エントリの文章や画像などのコンテンツ[CC BY 4.0 DEED](https://creativecommons.org/licenses/by/4.0/deed.ja)を適応します。

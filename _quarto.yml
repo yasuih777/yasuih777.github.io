@@ -1,0 +1,78 @@
+project: 
+  type: website
+  execute-dir: project
+  output-dir: docs
+  preview: 
+    port: 7777
+    browser: false
+
+lang: ja
+
+website: 
+  title: 優月の生物統計学ノート
+  image: images/profile.png
+  search:
+    location: navbar
+    type: textbox
+  google-analytics: G-2BDGJJZ99H
+  navbar:
+    logo: images/profile.png
+    left: 
+      - qmds/index.qmd
+      - qmds/articles.qmd
+      - qmds/environment.qmd
+      - qmds/connection.qmd
+    right: 
+      - icon: github
+        menu: 
+          - text: Github
+            href: https://github.com/yasuih777/yasuih777.github.io
+          - text: issueへの報告
+            href: https://github.com/yasuih777/yasuih777.github.io/issues
+  sidebar:
+    style: docked
+    contents:
+      - section: ホーム
+        contents:
+          - qmds/index.qmd
+          - qmds/articles.qmd
+          - qmds/environment.qmd
+          - qmds/connection.qmd
+      - section: ノート一覧
+        contents:
+          - section: 生物統計学
+            contents: qmds/biostatistics/*
+    collapse-level: 1
+  back-to-top-navigation: true
+  page-footer: Copyright 2023, 優月 
+
+title: Non title
+date: now
+date-modified: now
+date-format: iso
+abstract: Non abstract
+link-external-icon: true
+link-external-newwindow: true
+format:
+  html:
+    theme: minty
+    css: styles.css
+    grid:
+      body-width: 1000px
+      gutter-width: 10px
+    linestretch: 2em
+    toc: true
+    anchor-sections: true
+    smooth-scroll: true
+    quarto-required: ">= 1.3.0"
+    mermaid:
+      theme: neutral
+code-line-numbers: true
+
+fig-cap-location: margin
+license: CC BY 4.0 DEED
+
+execute: 
+  freeze: auto
+  warning: false
+code-fold: true

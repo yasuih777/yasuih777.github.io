@@ -1,0 +1,27 @@
+---
+title: 実行環境
+abstract: このウェブサイトを構成する環境について記載しております
+date: 01/08/2024
+knitr:
+  opts_chunk: 
+    echo: false
+---
+
+# Quarto
+
+```
+Quarto version: {{< var quarto_version >}}
+```
+
+# R
+
+```{r}
+#| echo: false
+
+library("devtools")
+
+rm(list=ls())
+
+si <- devtools::session_info()
+si$platform
+```

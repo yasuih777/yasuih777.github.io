@@ -1,0 +1,12 @@
+---
+title: "お問い合わせ"
+date: 12/26/2023
+date-modified: 01/08/2024
+abstract: お問い合わせページ
+---
+
+# お問い合わせについて
+
+　[Google Form](https://forms.gle/a8HbS8triG3u3332A)で受け付けております。
+
+- セキュリティの都合上、Google アカウントのみ受け付けております。予めご了承ください。
