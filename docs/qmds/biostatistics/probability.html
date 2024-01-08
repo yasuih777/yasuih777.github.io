@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.537">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -80,7 +80,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "一致なし",
     "search-matching-documents-text": "一致した文書",
@@ -89,6 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "追加の検索結果",
     "search-more-matches-text": "追加の検索結果",
     "search-clear-button-title": "消去",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "取消",
     "search-submit-button-title": "検索",
     "search-label": "サーチ"
@@ -112,6 +118,33 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
@@ -119,9 +152,9 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../images/profile.png" alt="" class="navbar-logo">
     </a>
@@ -136,61 +169,61 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../qmds/index.html" rel="" target="" aria-current="page">
- <span class="menu-text">このサイトについて</span></a>
+    <a class="nav-link active" href="../../qmds/index.html" aria-current="page"> 
+<span class="menu-text">このサイトについて</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../qmds/articles.html" rel="" target="">
- <span class="menu-text">ノートブック</span></a>
+    <a class="nav-link" href="../../qmds/articles.html"> 
+<span class="menu-text">ノートブック</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../qmds/environment.html" rel="" target="">
- <span class="menu-text">実行環境</span></a>
+    <a class="nav-link" href="../../qmds/environment.html"> 
+<span class="menu-text">実行環境</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../qmds/connection.html" rel="" target="">
- <span class="menu-text">お問い合わせ</span></a>
+    <a class="nav-link" href="../../qmds/connection.html"> 
+<span class="menu-text">お問い合わせ</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-github">    
         <li>
-    <a class="dropdown-item" href="https://github.com/yasuih777/yasuih777.github.io" rel="" target="">
+    <a class="dropdown-item" href="https://github.com/yasuih777/yasuih777.github.io">
  <span class="dropdown-text">Github</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://github.com/yasuih777/yasuih777.github.io/issues" rel="" target="">
+    <a class="dropdown-item" href="https://github.com/yasuih777/yasuih777.github.io/issues">
  <span class="dropdown-text">issueへの報告</span></a>
   </li>  
     </ul>
   </li>
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">ノート一覧</li><li class="breadcrumb-item"><a href="../../qmds/biostatistics/probability.html">生物統計学</a></li><li class="breadcrumb-item"><a href="../../qmds/biostatistics/probability.html">確率基礎</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">ノート一覧</li><li class="breadcrumb-item"><a href="../../qmds/biostatistics/probability.html">生物統計学</a></li><li class="breadcrumb-item"><a href="../../qmds/biostatistics/probability.html">確率基礎</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -265,7 +298,7 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -313,7 +346,7 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">ノート一覧</li><li class="breadcrumb-item"><a href="../../qmds/biostatistics/probability.html">生物統計学</a></li><li class="breadcrumb-item"><a href="../../qmds/biostatistics/probability.html">確率基礎</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">確率基礎</h1>
   <div class="quarto-categories">
@@ -344,15 +377,17 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
   
 <div>
   <div class="abstract">
-    <div class="abstract-title">概要</div>
+    <div class="block-title">概要</div>
     統計学の根幹である確率理論の基礎を学びます
   </div>
 </div>
 
+
 </header>
 
+
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>コード</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># このノートで使用するライブラリです</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
@@ -376,7 +411,7 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
 <h1>確率空間</h1>
 <section id="定義" class="level2">
 <h2 class="anchored" data-anchor-id="定義">定義</h2>
-<p>　<strong>確率空間</strong>は標本空間 <span class="math inline">\(\Omega\)</span> , 事象空間 <span class="math inline">\(\mathcal{E}\)</span> , 確率測度 <span class="math inline">\(P\)</span> の三つ組 <span class="math inline">\((\Omega, \mathcal{E}, P)\)</span> で定義されます。<a href="#fig-1">図&nbsp;1</a></p>
+<p>　<strong>確率空間</strong>は標本空間 <span class="math inline">\(\Omega\)</span> , 事象空間 <span class="math inline">\(\mathcal{E}\)</span> , 確率測度 <span class="math inline">\(P\)</span> の三つ組 <span class="math inline">\((\Omega, \mathcal{E}, P)\)</span> で定義されます。<a href="#fig-1" class="quarto-xref">図&nbsp;1</a></p>
 <ul>
 <li>標本空間 <span class="math inline">\(\Omega\)</span> : 個別の確率的現象 <span class="math inline">\(\omega \in \Omega\)</span> (標本点, 根元事象)の集合です。標本空間には起こりうる全ての確率的現象が含まれており、各確率的現象は互いに排他的です。
 <ul>
@@ -391,7 +426,7 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
 <li>ex) サイコロの目が偶数となる事象: <span class="math inline">\(e = \{ 2, 4, 6 \}\)</span></li>
 <li>サイコロの目の事象空間の要素数は <span class="math inline">\(2^{|\{ 1, 2, 3, 4, 5, 6 \}|} = 2^{6} = 64\)</span></li>
 </ul></li>
-<li>確率測度 <span class="math inline">\(P\)</span> : 確率測度は写像 <span class="math inline">\(P \colon \mathcal{E} \to [0, 1] \subset \mathbb{R}\)</span> です。一つの事象 <span class="math inline">\(e\)</span> に対して<strong>確率値</strong> <span class="math inline">\(P(e) \in [0, 1]\)</span> が定まります。特に、<span class="math inline">\(P(\varnothing) = 0\)</span> , <span class="math inline">\(P(\Omega) = 1\)</span>です。また、確率測度は各事象が互いに排反であるとき <a href="#eq-1">式&nbsp;1</a> の(3)を満たします。
+<li>確率測度 <span class="math inline">\(P\)</span> : 確率測度は写像 <span class="math inline">\(P \colon \mathcal{E} \to [0, 1] \subset \mathbb{R}\)</span> です。一つの事象 <span class="math inline">\(e\)</span> に対して<strong>確率値</strong> <span class="math inline">\(P(e) \in [0, 1]\)</span> が定まります。特に、<span class="math inline">\(P(\varnothing) = 0\)</span> , <span class="math inline">\(P(\Omega) = 1\)</span>です。また、確率測度は各事象が互いに排反であるとき <a href="#eq-1" class="quarto-xref">式&nbsp;1</a> の(3)を満たします。
 <ul>
 <li>ex) サイコロの目が偶数となる確率: <span class="math inline">\(P( \{ 2, 4, 6 \}) = \frac{1}{2}\)</span></li>
 </ul></li>
@@ -399,7 +434,7 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
 </section>
 <section id="kolmogorovコルモゴロブの公理" class="level2">
 <h2 class="anchored" data-anchor-id="kolmogorovコルモゴロブの公理">Kolmogorov(コルモゴロブ)の公理</h2>
-<p>確率測度 <span class="math inline">\(P\)</span> が満たす、次の3つからなる Kolmogorovの公理 <a href="#eq-1">式&nbsp;1</a> があります。これは前述した標本空間、事象空間、確率測度の記述と同等の意味です。</p>
+<p>確率測度 <span class="math inline">\(P\)</span> が満たす、次の3つからなる Kolmogorovの公理 <a href="#eq-1" class="quarto-xref">式&nbsp;1</a> があります。これは前述した標本空間、事象空間、確率測度の記述と同等の意味です。</p>
 <p><span id="eq-1"><span class="math display">\[
 \begin{split}
 &amp;(1) \ e_{1}, e_{2}, e_{3} \in \mathcal{E} \Rightarrow e_{1} \cup e_{2} \cup e_{3}, e_{1} \cap e_{2} \cap e_{3}, e_{1}^{c}, \varnothing, \Omega \in \mathcal{E} \\[1em]
@@ -414,15 +449,16 @@ gtag('config', 'G-2BDGJJZ99H', { 'anonymize_ip': true});
 <h1>確率変数</h1>
 <section id="定義-1" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="定義-1">定義</h2>
-<p><strong>確率変数</strong> <span class="math inline">\(X\)</span> <sup><a href="#note2">2</a></sup> は <a href="#eq-2">式&nbsp;2</a> の条件を満たす写像として定義されます。 <span id="eq-2"><span class="math display">\[
+<p><strong>確率変数</strong> <span class="math inline">\(X\)</span> <sup><a href="#note2">2</a></sup> は <a href="#eq-2" class="quarto-xref">式&nbsp;2</a> の条件を満たす写像として定義されます。 <span id="eq-2"><span class="math display">\[
 X \colon \Omega \rightarrow \mathbb{R}, \exists X^{-1}(b) \in \mathcal{E} \ (\mbox{for any} \ b \in \mathcal{B})
 \tag{2}\]</span></span></p>
-<p>　複雑になったように見えますが、この確率変数 <span class="math inline">\(X\)</span> を考えることで解析したい確率的現象にバリエーションを持たせることができます。例えば、 <span class="math inline">\(b = [0, 1] \in \mathcal{B}\)</span> をとると、 <a href="#eq-2">式&nbsp;2</a> より <span class="math inline">\(X^{-1}([0, 1]) = \{ \omega \in \Omega | 0 \leqq X(\omega) \leqq 1 \} \in \mathcal{E}\)</span> なる <span class="math inline">\(X^{-1}\)</span> が存在し、確率値 <span class="math inline">\(P(0 \leqq X \leqq 1)\)</span> が計算できます。これは任意の区間や点で同様に確率値を求めることもできます(ex: <span class="math inline">\(P(X = 0)\)</span> )。<br>
-　なので、確率空間 <span class="math inline">\((\Omega, \mathcal{E}, P)\)</span> に対して確率変数 <span class="math inline">\(X\)</span> が与えられたとき、対応する確率空間 <span class="math inline">\((\Omega, \mathcal{B}, P_{X})\)</span> が定まります。この <span class="math inline">\(P_{X}\)</span>を<strong>確率分布</strong>といい、確率変数は確率分布 <span class="math inline">\(P_{X}\)</span> に従います( <span class="math inline">\(X \thicksim P_{X}\)</span> )。<a href="#fig-1">図&nbsp;1</a></p>
-<div class="cell page-columns page-full">
+<p>　複雑になったように見えますが、この確率変数 <span class="math inline">\(X\)</span> を考えることで解析したい確率的現象にバリエーションを持たせることができます。例えば、 <span class="math inline">\(b = [0, 1] \in \mathcal{B}\)</span> をとると、 <a href="#eq-2" class="quarto-xref">式&nbsp;2</a> より <span class="math inline">\(X^{-1}([0, 1]) = \{ \omega \in \Omega | 0 \leqq X(\omega) \leqq 1 \} \in \mathcal{E}\)</span> なる <span class="math inline">\(X^{-1}\)</span> が存在し、確率値 <span class="math inline">\(P(0 \leqq X \leqq 1)\)</span> が計算できます。これは任意の区間や点で同様に確率値を求めることもできます(ex: <span class="math inline">\(P(X = 0)\)</span> )。<br>
+　なので、確率空間 <span class="math inline">\((\Omega, \mathcal{E}, P)\)</span> に対して確率変数 <span class="math inline">\(X\)</span> が与えられたとき、対応する確率空間 <span class="math inline">\((\Omega, \mathcal{B}, P_{X})\)</span> が定まります。この <span class="math inline">\(P_{X}\)</span>を<strong>確率分布</strong>といい、確率変数は確率分布 <span class="math inline">\(P_{X}\)</span> に従います( <span class="math inline">\(X \thicksim P_{X}\)</span> )。<a href="#fig-1" class="quarto-xref">図&nbsp;1</a></p>
+<div class="cell page-columns page-full" data-layout-align="default">
 <div class="cell-output-display page-columns page-full">
-<div id="fig-1" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
+<div id="fig-1" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-1">graph LR
     Sample[標本空間]
@@ -441,7 +477,10 @@ X \colon \Omega \rightarrow \mathbb{R}, \exists X^{-1}(b) \in \mathcal{E} \ (\mb
     end
 </pre>
 </div>
-<figcaption class="figure-caption margin-caption">図&nbsp;1: 確率空間・確率変数のイメージ</figcaption>
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+図&nbsp;1: 確率空間・確率変数のイメージ
+</figcaption>
 </figure>
 </div>
 </div>
@@ -480,12 +519,12 @@ P_{X}(X_{cos} = i) =
 </section>
 <section id="確率密度関数分布関数" class="level1 page-columns page-full">
 <h1>確率密度関数・分布関数</h1>
-<p>　<strong>確率密度関数</strong>は <span class="math inline">\(X \thicksim P_{X}\)</span> に対して <a href="#eq-3">式&nbsp;3</a> を満たす関数 <span class="math inline">\(f_{X}\)</span> です。(<a href="#fig-2">図&nbsp;2</a>)</p>
+<p>　<strong>確率密度関数</strong>は <span class="math inline">\(X \thicksim P_{X}\)</span> に対して <a href="#eq-3" class="quarto-xref">式&nbsp;3</a> を満たす関数 <span class="math inline">\(f_{X}\)</span> です。(<a href="#fig-2" class="quarto-xref">図&nbsp;2</a>)</p>
 <p><span id="eq-3"><span class="math display">\[
 P_{X}(X \in b) = \int_{b} f_{X}(x) dx \ (\mbox{for any} \ b \in \mathcal{B}
 \tag{3}\]</span></span></p>
 <p>　これは、事象 <span class="math inline">\(b\)</span> の範囲で <span class="math inline">\(f_{X}\)</span> を積分すると、事象 <span class="math inline">\(b\)</span> の確率値が求まることを表しています。</p>
-<p>　また、確率変数 <span class="math inline">\(X\)</span> が実測値 <span class="math inline">\(x\)</span> 以下になる確率として定義される関数を<strong>分布関数</strong> <span class="math inline">\(F_{X}\)</span> といいます <a href="#eq-4">式&nbsp;4</a> 。(<a href="#fig-2">図&nbsp;2</a>)</p>
+<p>　また、確率変数 <span class="math inline">\(X\)</span> が実測値 <span class="math inline">\(x\)</span> 以下になる確率として定義される関数を<strong>分布関数</strong> <span class="math inline">\(F_{X}\)</span> といいます <a href="#eq-4" class="quarto-xref">式&nbsp;4</a> 。(<a href="#fig-2" class="quarto-xref">図&nbsp;2</a>)</p>
 <p><span id="eq-4"><span class="math display">\[
 P_{X}(X \leqq x) = P_{X}([- \infty, x]) = F_{X}(x)
 \tag{4}\]</span></span></p>
@@ -497,7 +536,7 @@ P_{X}(X \leqq x) = P_{X}([- \infty, x]) = F_{X}(x)
 <li><span class="math inline">\(f_{X}(x) = \frac{\partial F_{X}}{\partial x}(x)\)</span></li>
 </ul>
 <div class="cell page-columns page-full">
-<details>
+<details class="code-fold">
 <summary>コード</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">length=</span><span class="dv">100</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>f_x <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x)</span>
@@ -513,10 +552,14 @@ P_{X}(X \leqq x) = P_{X}([- \infty, x]) = F_{X}(x)
 <span id="cb2-12"><a href="#cb2-12"></a><span class="fu">plot</span>(g)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display page-columns page-full">
-<div id="fig-2" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="probability_files/figure-html/fig-2-1.png" class="img-fluid figure-img" width="768"></p>
-<figcaption class="figure-caption margin-caption">図&nbsp;2: 確率密度関数と分布関数の例</figcaption>
+<div id="fig-2" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="probability_files/figure-html/fig-2-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+図&nbsp;2: 確率密度関数と分布関数の例
+</figcaption>
 </figure>
 </div>
 </div>
@@ -527,7 +570,7 @@ P_{X}(X \leqq x) = P_{X}([- \infty, x]) = F_{X}(x)
 <section id="同時確率密度関数" class="level2">
 <h2 class="anchored" data-anchor-id="同時確率密度関数">同時確率密度関数</h2>
 <p>　<strong>同時確率</strong>とは、いくつかの事象 <span class="math inline">\(\{ e_{1}, \cdots, e_{n} \}\)</span> の積集合の確率 <span class="math inline">\(P(e_{1}, \cdots, e_{n}) \coloneqq P(e_{1} \cap \cdots \cap e_{n})\)</span>です。<br>
-　<strong>同時確率密度関数</strong> <span class="math inline">\(f_{XY}\)</span> は、確率変数 <span class="math inline">\(X, Y\)</span> に対して、 <a href="#eq-5">式&nbsp;5</a> で定義される関数です。</p>
+　<strong>同時確率密度関数</strong> <span class="math inline">\(f_{XY}\)</span> は、確率変数 <span class="math inline">\(X, Y\)</span> に対して、 <a href="#eq-5" class="quarto-xref">式&nbsp;5</a> で定義される関数です。</p>
 <p><span id="eq-5"><span class="math display">\[
 P((X, Y) \in I \times J) =
 \int \int_{(x, y) \in I \times J} f_{XY}(x, y) dx dy \ (\mbox{for any} \ I, J \subset \mathbb{R}^{2})
@@ -535,18 +578,18 @@ P((X, Y) \in I \times J) =
 </section>
 <section id="周辺分布" class="level2">
 <h2 class="anchored" data-anchor-id="周辺分布">周辺分布</h2>
-<p>　同時確率密度関数 <span class="math inline">\(f_{XY}\)</span> に対して、確率変数 <span class="math inline">\(Y\)</span> がとりうる全ての値の総和をとる(<a href="#eq-6">式&nbsp;6</a>)ことを<strong>周辺化</strong>といいます。このとき、周辺化された関数 <span class="math inline">\(f_{X}\)</span> は確率変数 <span class="math inline">\(X\)</span> の確率密度関数そのものです。</p>
+<p>　同時確率密度関数 <span class="math inline">\(f_{XY}\)</span> に対して、確率変数 <span class="math inline">\(Y\)</span> がとりうる全ての値の総和をとる(<a href="#eq-6" class="quarto-xref">式&nbsp;6</a>)ことを<strong>周辺化</strong>といいます。このとき、周辺化された関数 <span class="math inline">\(f_{X}\)</span> は確率変数 <span class="math inline">\(X\)</span> の確率密度関数そのものです。</p>
 <p><span id="eq-6"><span class="math display">\[
 \int^{\infty}_{- \infty} f_{XY}(x, y) dx = f_{X}(x)
 \tag{6}\]</span></span></p>
 </section>
 <section id="条件付き確率分布" class="level2">
 <h2 class="anchored" data-anchor-id="条件付き確率分布">条件付き確率分布</h2>
-<p>　事象 <span class="math inline">\(e_{1}, e_{2}\)</span>について、事象 <span class="math inline">\(e_{2}\)</span> が実現する条件下での事象 <span class="math inline">\(e_{1}\)</span> の<strong>条件付き確率</strong> <span class="math inline">\(P(e_{1} | e_{2})\)</span> は <a href="#eq-7">式&nbsp;7</a> で定義されます。</p>
+<p>　事象 <span class="math inline">\(e_{1}, e_{2}\)</span>について、事象 <span class="math inline">\(e_{2}\)</span> が実現する条件下での事象 <span class="math inline">\(e_{1}\)</span> の<strong>条件付き確率</strong> <span class="math inline">\(P(e_{1} | e_{2})\)</span> は <a href="#eq-7" class="quarto-xref">式&nbsp;7</a> で定義されます。</p>
 <p><span id="eq-7"><span class="math display">\[
 P(e_{1} | e_{2}) = \frac{P(e_{1} \cap e_{2})}{P(e_{2})}
 \tag{7}\]</span></span></p>
-<p>　特に、確率変数 <span class="math inline">\(X, Y\)</span>について、 <span class="math inline">\(Y=y\)</span> のもとでの確率変数 <span class="math inline">\(X\)</span> の<strong>条件付き確率密度関数</strong> <span class="math inline">\(f_{X | Y=y}\)</span> を <a href="#eq-8">式&nbsp;8</a> で定義します(一般的な記号として<span class="math inline">\(p(x | y)\)</span> と表記します)。</p>
+<p>　特に、確率変数 <span class="math inline">\(X, Y\)</span>について、 <span class="math inline">\(Y=y\)</span> のもとでの確率変数 <span class="math inline">\(X\)</span> の<strong>条件付き確率密度関数</strong> <span class="math inline">\(f_{X | Y=y}\)</span> を <a href="#eq-8" class="quarto-xref">式&nbsp;8</a> で定義します(一般的な記号として<span class="math inline">\(p(x | y)\)</span> と表記します)。</p>
 <p><span id="eq-8"><span class="math display">\[
 p(x | y) = f_{X | Y=y} = \frac{f_{XY}(x, y)}{f_{Y}(y)}
 \tag{8}\]</span></span></p>
@@ -559,7 +602,7 @@ p(x | y) = f_{X | Y=y} = \frac{f_{XY}(x, y)}{f_{Y}(y)}
 <p><span class="math display">\[
 p(x | y) = \frac{\frac{1}{6} + \frac{1}{6}}{\frac{1}{6} + \frac{1}{6} + \frac{1}{6}} = \frac{2}{3}
 \]</span></p>
-<p>　また、<a href="#eq-8">式&nbsp;8</a> より、同時確率密度関数は <a href="#eq-9">式&nbsp;9</a> のように書くことができます。</p>
+<p>　また、<a href="#eq-8" class="quarto-xref">式&nbsp;8</a> より、同時確率密度関数は <a href="#eq-9" class="quarto-xref">式&nbsp;9</a> のように書くことができます。</p>
 <p><span id="eq-9"><span class="math display">\[
 f_{XY} = f_{X | Y=y} f_{Y} \ (p(x, y) = p(x | y) p(y))
 \tag{9}\]</span></span></p>
@@ -567,7 +610,7 @@ f_{XY} = f_{X | Y=y} f_{Y} \ (p(x, y) = p(x | y) p(y))
 <section id="統計的独立" class="level2">
 <h2 class="anchored" data-anchor-id="統計的独立">統計的独立</h2>
 <p>　二つの事象 <span class="math inline">\(e_{1}, e_{2}\)</span> が<strong>統計的独立</strong>とは、 <span class="math inline">\(P(e_{1}, e_{2}) = P(e_{1}) P(e_{2})\)</span> が成り立つことです。<br>
-　特に、確率変数 <span class="math inline">\(X, Y\)</span> について <span class="math inline">\(X\)</span> と <span class="math inline">\(Y\)</span> が統計的独立とは <a href="#eq-10">式&nbsp;10</a> が成り立つことをいいます。</p>
+　特に、確率変数 <span class="math inline">\(X, Y\)</span> について <span class="math inline">\(X\)</span> と <span class="math inline">\(Y\)</span> が統計的独立とは <a href="#eq-10" class="quarto-xref">式&nbsp;10</a> が成り立つことをいいます。</p>
 <p><span id="eq-10"><span class="math display">\[
 \forall b_{1}, b_{2} \in \mathcal{B}, P(X \in b_{1}, Y \in b_{2}) = P(X \in b_{1}) P(Y \in b_{2})
 \tag{10}\]</span></span></p>
@@ -578,7 +621,7 @@ f_{XY} = f_{X | Y=y} f_{Y} \ (p(x, y) = p(x | y) p(y))
 <h1>期待値</h1>
 <section id="期待値-1" class="level2">
 <h2 class="anchored" data-anchor-id="期待値-1">期待値</h2>
-<p>　確率変数 <span class="math inline">\(X \thicksim P_{X}\)</span> について、その<strong>期待値</strong> <span class="math inline">\(E(X)\)</span>は <a href="#eq-11">式&nbsp;11</a> で定義されます。期待値は <span class="math inline">\(X\)</span> からランダムサンプリングされたデータの平均的な値を示します。</p>
+<p>　確率変数 <span class="math inline">\(X \thicksim P_{X}\)</span> について、その<strong>期待値</strong> <span class="math inline">\(E(X)\)</span>は <a href="#eq-11" class="quarto-xref">式&nbsp;11</a> で定義されます。期待値は <span class="math inline">\(X\)</span> からランダムサンプリングされたデータの平均的な値を示します。</p>
 <p><span id="eq-11"><span class="math display">\[
 E(X) = \int^{\infty}_{- \infty} x f_{X}(x) dx
 \tag{11}\]</span></span></p>
@@ -589,21 +632,21 @@ E(X) = \int^{\infty}_{- \infty} x f_{X}(x) dx
 <li><span class="math inline">\(X, Y\)</span> が統計的独立のとき、 <span class="math inline">\(E(X Y) = E(X) E(Y)\)</span></li>
 <li><span class="math inline">\(\phi \colon X \rightarrow \mathbb{R}\)</span> なる関数が存在するとき<sup><a href="#note3">3</a></sup>、 <span class="math inline">\(E(\phi(X)) = \int^{\infty}_{- \infty} \phi(x) f_{X}(x) dx\)</span></li>
 </ul>
-<p>　また、確率変数 <span class="math inline">\(X, Y\)</span> について、<span class="math inline">\(Y = y\)</span> のもとでの<strong>条件付き期待値</strong> <span class="math inline">\(E(X | Y=y)\)</span> は <a href="#eq-12">式&nbsp;12</a> で定義されます<sup><a href="#note4">4</a></sup>。</p>
+<p>　また、確率変数 <span class="math inline">\(X, Y\)</span> について、<span class="math inline">\(Y = y\)</span> のもとでの<strong>条件付き期待値</strong> <span class="math inline">\(E(X | Y=y)\)</span> は <a href="#eq-12" class="quarto-xref">式&nbsp;12</a> で定義されます<sup><a href="#note4">4</a></sup>。</p>
 <p><span id="eq-12"><span class="math display">\[
 \begin{split}
 E(X | Y=y) &amp;= \int^{\infty}_{- \infty} x f_{X}(x | y) dx \\
     &amp;= \frac{1}{f_Y(y)} \int^{\infty}_{- \infty} x f_{XY}(x, y) dx
 \end{split}
 \tag{12}\]</span></span></p>
-<p>※ <a href="#eq-8">式&nbsp;8</a> を使用しました。</p>
+<p>※ <a href="#eq-8" class="quarto-xref">式&nbsp;8</a> を使用しました。</p>
 </section>
 </section>
 <section id="分散共分散" class="level1">
 <h1>分散・共分散</h1>
 <section id="分散" class="level2">
 <h2 class="anchored" data-anchor-id="分散">分散</h2>
-<p>　確率変数 <span class="math inline">\(X\)</span> の期待値を <span class="math inline">\(\mu = E(X)\)</span> とするとき、 <span class="math inline">\(X\)</span> の<strong>分散</strong> V(X) は <a href="#eq-13">式&nbsp;13</a> で定義されます。分散は <span class="math inline">\(X\)</span> がランダムサンプリングするときにどれほどばらつきがあるか、即ち確率分布の広がりの尺度を与えます <sup><a href="#note5">5</a></sup> <sup><a href="#note6">6</a></sup>。</p>
+<p>　確率変数 <span class="math inline">\(X\)</span> の期待値を <span class="math inline">\(\mu = E(X)\)</span> とするとき、 <span class="math inline">\(X\)</span> の<strong>分散</strong> V(X) は <a href="#eq-13" class="quarto-xref">式&nbsp;13</a> で定義されます。分散は <span class="math inline">\(X\)</span> がランダムサンプリングするときにどれほどばらつきがあるか、即ち確率分布の広がりの尺度を与えます <sup><a href="#note5">5</a></sup> <sup><a href="#note6">6</a></sup>。</p>
 <p><span id="eq-13"><span class="math display">\[
 \begin{split}
 V(X) &amp;= E((X - \mu)^{2}) \\
@@ -620,7 +663,7 @@ V(X) &amp;= E((X - \mu)^{2}) \\
 </section>
 <section id="共分散" class="level2">
 <h2 class="anchored" data-anchor-id="共分散">共分散</h2>
-<p>　確率変数 <span class="math inline">\(X, Y\)</span> の期待値をそれぞれ <span class="math inline">\(\mu_{X}, \mu_{Y}\)</span>とするとき、 <span class="math inline">\(X, Y\)</span> の<strong>共分散</strong> <span class="math inline">\(C(X, Y)\)</span> を <a href="#eq-14">式&nbsp;14</a> で定義します。これは確率変数間の相関の程度を表す指標で、共分散と <span class="math inline">\(X = x, Y = y\)</span> の関係性は次のようになります。</p>
+<p>　確率変数 <span class="math inline">\(X, Y\)</span> の期待値をそれぞれ <span class="math inline">\(\mu_{X}, \mu_{Y}\)</span>とするとき、 <span class="math inline">\(X, Y\)</span> の<strong>共分散</strong> <span class="math inline">\(C(X, Y)\)</span> を <a href="#eq-14" class="quarto-xref">式&nbsp;14</a> で定義します。これは確率変数間の相関の程度を表す指標で、共分散と <span class="math inline">\(X = x, Y = y\)</span> の関係性は次のようになります。</p>
 <ul>
 <li><span class="math inline">\(C(X, Y) &gt; 0\)</span> のとき、 <span class="math inline">\(x\)</span> が大きな値をとるときに同時に観測された <span class="math inline">\(y\)</span> も大きな値をとる傾向がある</li>
 <li><span class="math inline">\(C(X, Y) &lt; 0\)</span> のとき、 <span class="math inline">\(x\)</span> が大きな値をとるときに同時に観測された <span class="math inline">\(y\)</span> は小さな値をとる傾向がある</li>
@@ -650,7 +693,7 @@ C(X, Y) &amp;= E(XY) - E(X)E(Y) \\
 </section>
 <section id="相関係数" class="level1">
 <h1>相関係数</h1>
-<p>　確率変数 <span class="math inline">\(X, Y\)</span>が <span class="math inline">\(V(X) &gt; 0, V(Y) &gt; 0\)</span>を満たすとき、<strong>相関係数</strong> <span class="math inline">\(\rho(X, Y)\)</span> <a href="#eq-15">式&nbsp;15</a> で定義されます <sup><a href="#note7">7</a></sup>。相関係数は二変数間の線形的な関係の尺度を与えます <a href="#tbl-1">表&nbsp;1</a>。</p>
+<p>　確率変数 <span class="math inline">\(X, Y\)</span>が <span class="math inline">\(V(X) &gt; 0, V(Y) &gt; 0\)</span>を満たすとき、<strong>相関係数</strong> <span class="math inline">\(\rho(X, Y)\)</span> <a href="#eq-15" class="quarto-xref">式&nbsp;15</a> で定義されます <sup><a href="#note7">7</a></sup>。相関係数は二変数間の線形的な関係の尺度を与えます <a href="#tbl-1" class="quarto-xref">表&nbsp;1</a>。</p>
 <p><span id="eq-15"><span class="math display">\[
 \rho(X, Y) = \frac{C(X, Y)}{\sqrt{V(X)V(Y)}}
 \tag{15}\]</span></span></p>
@@ -660,9 +703,13 @@ C(X, Y) &amp;= E(XY) - E(X)E(Y) \\
 <li>特に、 <span class="math inline">\(\rho(X, Y) = \pm 1\)</span>のとき、 <span class="math inline">\(\frac{X - E(X)}{\sqrt{V(X)}} \mp \frac{Y - E(Y)}{\sqrt{V(Y)}} = 0\)</span> (複合同順)</li>
 </ul>
 <p>　また、相関係数による尺度は明確に決まっていませんが、次の基準をよく見ます。</p>
-<div id="tbl-1" class="anchored">
+<div id="tbl-1" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+表&nbsp;1: 相関係数が与える解釈
+</figcaption>
+<div aria-describedby="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>表&nbsp;1: 相関係数が与える解釈</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">相関係数</th>
@@ -701,19 +748,21 @@ C(X, Y) &amp;= E(XY) - E(X)E(Y) \\
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 </section>
 <section id="標本からの推定" class="level1 page-columns page-full">
 <h1>標本からの推定</h1>
 <section id="推定値" class="level2">
 <h2 class="anchored" data-anchor-id="推定値">推定値</h2>
-<p>　<span class="math inline">\(X \thicksim P_{X}\)</span>なる確率変数から得られた標本の集合 <span class="math inline">\(\{ x_{i} | i = 1, \cdots, n \}\)</span> に対して、確率分布の期待値の推定値である<strong>標本平均</strong> <span class="math inline">\(\bar{x}\)</span> <a href="#eq-16">式&nbsp;16</a> と分散の推定値である<strong>標本分散</strong> <span class="math inline">\(s^{2}\)</span> <a href="#eq-17">式&nbsp;17</a> が定義されます。また、 <span class="math inline">\(s = \sqrt{s^{2}}\)</span> を<strong>標本標準偏差</strong>と定義します。</p>
+<p>　<span class="math inline">\(X \thicksim P_{X}\)</span>なる確率変数から得られた標本の集合 <span class="math inline">\(\{ x_{i} | i = 1, \cdots, n \}\)</span> に対して、確率分布の期待値の推定値である<strong>標本平均</strong> <span class="math inline">\(\bar{x}\)</span> <a href="#eq-16" class="quarto-xref">式&nbsp;16</a> と分散の推定値である<strong>標本分散</strong> <span class="math inline">\(s^{2}\)</span> <a href="#eq-17" class="quarto-xref">式&nbsp;17</a> が定義されます。また、 <span class="math inline">\(s = \sqrt{s^{2}}\)</span> を<strong>標本標準偏差</strong>と定義します。</p>
 <p><span id="eq-16"><span class="math display">\[
 \bar{x} = \frac{1}{n} \sum^{n}_{i = 1} x_{i}
 \tag{16}\]</span></span></p>
 <p><span id="eq-17"><span class="math display">\[
 s^{2} = \frac{1}{n - 1} \sum^{n}_{i = 1} (x_{i} - \bar{x})^{2}
 \tag{17}\]</span></span></p>
-<p>　加えて、 <span class="math inline">\((X, Y) ~ P\)</span> なる確率変数から得られたペアの標本の集合 <span class="math inline">\(\{ (x_{i}, y_{i}) | i = 1, \cdots, n \}\)</span> に対して、共分散の推定値である<strong>標本共分散</strong> <span class="math inline">\(c_{XY}\)</span> <a href="#eq-18">式&nbsp;18</a> と相関係数の推定値である<strong>標本相関係数</strong> <span class="math inline">\(r_{XY}\)</span> <a href="#eq-19">式&nbsp;19</a> が定義されます。</p>
+<p>　加えて、 <span class="math inline">\((X, Y) ~ P\)</span> なる確率変数から得られたペアの標本の集合 <span class="math inline">\(\{ (x_{i}, y_{i}) | i = 1, \cdots, n \}\)</span> に対して、共分散の推定値である<strong>標本共分散</strong> <span class="math inline">\(c_{XY}\)</span> <a href="#eq-18" class="quarto-xref">式&nbsp;18</a> と相関係数の推定値である<strong>標本相関係数</strong> <span class="math inline">\(r_{XY}\)</span> <a href="#eq-19" class="quarto-xref">式&nbsp;19</a> が定義されます。</p>
 <p><span id="eq-18"><span class="math display">\[
 c_{XY} = \frac{1}{n-1} \sum^{n}_{i = 1} (x_{i} - \bar{x}) (y_{i} - \bar{y})
 \tag{18}\]</span></span></p>
@@ -723,11 +772,12 @@ r_{XY} = \frac{c_{XY}}{s_{X} s_{Y}}
 </section>
 <section id="点推定標本変量" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="点推定標本変量">点推定・標本変量</h2>
-<p>　真の確率分布が既知であるが、その分布のあるパラメータ(母数) <span class="math inline">\(\theta\)</span> が未知であるとき、標本から適当な値 <span class="math inline">\(\hat{\theta}_{n}(x_{1}, \cdots, x_{n})\)</span> を計算し、この値を <span class="math inline">\(\theta\)</span> の推定値とする。<strong>点推定法</strong>があります。例えば、母平均 <span class="math inline">\(\mu\)</span> を標本平均 <span class="math inline">\(\hat{\mu} \equiv \bar{x}\)</span> <a href="#eq-16">式&nbsp;16</a> で推定するのは母数 <span class="math inline">\(\mu\)</span> の <span class="math inline">\(\bar{x}\)</span> による点推定といえます。<a href="#fig-3">図&nbsp;3</a></p>
-<div class="cell page-columns page-full">
+<p>　真の確率分布が既知であるが、その分布のあるパラメータ(母数) <span class="math inline">\(\theta\)</span> が未知であるとき、標本から適当な値 <span class="math inline">\(\hat{\theta}_{n}(x_{1}, \cdots, x_{n})\)</span> を計算し、この値を <span class="math inline">\(\theta\)</span> の推定値とする。<strong>点推定法</strong>があります。例えば、母平均 <span class="math inline">\(\mu\)</span> を標本平均 <span class="math inline">\(\hat{\mu} \equiv \bar{x}\)</span> <a href="#eq-16" class="quarto-xref">式&nbsp;16</a> で推定するのは母数 <span class="math inline">\(\mu\)</span> の <span class="math inline">\(\bar{x}\)</span> による点推定といえます。<a href="#fig-3" class="quarto-xref">図&nbsp;3</a></p>
+<div class="cell page-columns page-full" data-layout-align="default">
 <div class="cell-output-display page-columns page-full">
-<div id="fig-3" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
+<div id="fig-3" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-3">graph LR
     Population([真の確率分布])
@@ -738,14 +788,17 @@ r_{XY} = \frac{c_{XY}}{s_{X} s_{Y}}
     Sample --&gt;|推定| Parameter
 </pre>
 </div>
-<figcaption class="figure-caption margin-caption">図&nbsp;3: 点推定法の流れ</figcaption>
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+図&nbsp;3: 点推定法の流れ
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>　ここで、実際に得られる推定値 <span class="math inline">\(\hat{\theta}_{n}\)</span> は必ず母数 <span class="math inline">\(\theta\)</span> と一致することはなく、ある程度のばらつきをもって分布している<u>ある変量</u>の一標本として得られたものであることに注意が必要です <a href="#fig-4">図&nbsp;4</a> 。このある変量がどんな分布に従っているかを知ることは推定値を位置づけるうえでとても重要です。</p>
+<p>　ここで、実際に得られる推定値 <span class="math inline">\(\hat{\theta}_{n}\)</span> は必ず母数 <span class="math inline">\(\theta\)</span> と一致することはなく、ある程度のばらつきをもって分布している<u>ある変量</u>の一標本として得られたものであることに注意が必要です <a href="#fig-4" class="quarto-xref">図&nbsp;4</a> 。このある変量がどんな分布に従っているかを知ることは推定値を位置づけるうえでとても重要です。</p>
 <div class="cell page-columns page-full">
-<details>
+<details class="code-fold">
 <summary>コード</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>iter <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
@@ -765,15 +818,19 @@ r_{XY} = \frac{c_{XY}}{s_{X} s_{Y}}
 <span id="cb3-16"><a href="#cb3-16"></a><span class="fu">plot</span>(g)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display page-columns page-full">
-<div id="fig-4" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="probability_files/figure-html/fig-4-1.png" class="img-fluid figure-img" width="768"></p>
-<figcaption class="figure-caption margin-caption">図&nbsp;4: 真の確率分布(標準正規分布)の母平均=0: 黒線、および標本平均: ヒストグラムの関係性。標本平均は母平均付近には局在しているが、全て黒線と一致しない。</figcaption>
+<div id="fig-4" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="probability_files/figure-html/fig-4-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+図&nbsp;4: 真の確率分布(標準正規分布)の母平均=0: 黒線、および標本平均: ヒストグラムの関係性。標本平均は母平均付近には局在しているが、全て黒線と一致しない。
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>　そこで、標準の集団 <span class="math inline">\(\{ x_{i} | i = 1, \cdots n \}\)</span> を実測値とする、真の確率分布に従い互いに統計的独立な確率変数の組 <span class="math inline">\((X_{1}, \cdots, X_{n})\)</span> を考えます。これは<strong>標本変量</strong>と呼びます。この標本変量から作られる確率変数 <span class="math inline">\(\bar{X}\)</span> <a href="#eq-20">式&nbsp;20</a> を<strong>標本変量平均</strong>といいます。標本平均 <span class="math inline">\(\bar{x}\)</span> は標本変量平均の実測値となります。同様に標本変量から<strong>標本変量分散(不偏分散)</strong> <span class="math inline">\(S^{2}\)</span> <a href="#eq-21">式&nbsp;21</a> を定義することができます。</p>
+<p>　そこで、標準の集団 <span class="math inline">\(\{ x_{i} | i = 1, \cdots n \}\)</span> を実測値とする、真の確率分布に従い互いに統計的独立な確率変数の組 <span class="math inline">\((X_{1}, \cdots, X_{n})\)</span> を考えます。これは<strong>標本変量</strong>と呼びます。この標本変量から作られる確率変数 <span class="math inline">\(\bar{X}\)</span> <a href="#eq-20" class="quarto-xref">式&nbsp;20</a> を<strong>標本変量平均</strong>といいます。標本平均 <span class="math inline">\(\bar{x}\)</span> は標本変量平均の実測値となります。同様に標本変量から<strong>標本変量分散(不偏分散)</strong> <span class="math inline">\(S^{2}\)</span> <a href="#eq-21" class="quarto-xref">式&nbsp;21</a> を定義することができます。</p>
 <p><span id="eq-20"><span class="math display">\[
 \bar{X} = \frac{X_{1} + \cdots + X_{n}}{n}
 \tag{20}\]</span></span></p>
@@ -786,7 +843,7 @@ S^{2} = \frac{1}{n - 1} \sum^{n}_{i = 1} (X_{i} - \bar{X})^{2}
 <li><span class="math inline">\(V(\bar{X}) = \frac{\sigma^{2}}{n}\)</span></li>
 <li><span class="math inline">\(E(S^{2}) = \sigma^{2}\)</span></li>
 </ul>
-<p>　上記のように標本変量を導入することでさまざまな母数 <span class="math inline">\(\theta\)</span> の推定値 <span class="math inline">\(\hat{\theta}_{n}\)</span> を評価することができます。推定値がきちんと真の確率分布の母数を表現しうるならば、母数の周りに分布していることが望まれます。このような推定値 <span class="math inline">\(\hat{\theta}_{n}\)</span> は <a href="#eq-22">式&nbsp;22</a> が成り立ち、<strong>不偏推定量</strong>と呼ばれます <sup><a href="#note8">8</a></sup>。</p>
+<p>　上記のように標本変量を導入することでさまざまな母数 <span class="math inline">\(\theta\)</span> の推定値 <span class="math inline">\(\hat{\theta}_{n}\)</span> を評価することができます。推定値がきちんと真の確率分布の母数を表現しうるならば、母数の周りに分布していることが望まれます。このような推定値 <span class="math inline">\(\hat{\theta}_{n}\)</span> は <a href="#eq-22" class="quarto-xref">式&nbsp;22</a> が成り立ち、<strong>不偏推定量</strong>と呼ばれます <sup><a href="#note8">8</a></sup>。</p>
 <p><span id="eq-22"><span class="math display">\[
 E(\hat{\theta}_{n}) = \theta
 \tag{22}\]</span></span></p>
@@ -809,7 +866,7 @@ E(\hat{\theta}_{n}) = \theta
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> トップに戻る</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">ライセンス</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div>CC BY 4.0 DEED</div></div></section></div></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> トップに戻る</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">ライセンス</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC BY 4.0</a></div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -889,10 +946,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -902,8 +978,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -916,6 +1001,120 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -959,6 +1158,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -984,6 +1184,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1041,22 +1267,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          // default icon
-          link.classList.add("external");
-      }
-    }
 });
 </script>
 </div> <!-- /content -->
@@ -1065,12 +1275,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Copyright 2023, 優月</div>
+    <div class="nav-footer-center">
+<p>Copyright 2023, 優月</p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 
